@@ -159,6 +159,12 @@ Error message and password prompt
 
 <li>Discovery .tools</li>
 
+<li>DLL Hijacking</li>
+
+<li>File Sharing Service</li>
+
+<li>Firefox Plugins</li>
+
 <li>Footprint</li>
 
 <li>Footprint .tools</li>
@@ -189,7 +195,11 @@ Error message and password prompt
 
 <li>Persistance</li>
 
+<li>Persistence .tools</li>
+
 <li>Post-Exploitation</li>
+
+<li>Process Hollowing</li>
 
 <li>Reference</li>
 
@@ -3953,7 +3963,7 @@ Error message and password prompt
 <div created="20150507032518156" modified="20150508033539738" title="$:/DefaultTiddlers">
 <pre>[[Home]]</pre>
 </div>
-<div current-tiddler="$:/ControlPanel" modified="20150508033536200" title="$:/HistoryList" type="application/json">
+<div current-tiddler="Framework Methodology" modified="20150508130110220" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;GettingStarted&quot;
@@ -5526,6 +5536,83 @@ Error message and password prompt
             &quot;bottom&quot;: 171,
             &quot;height&quot;: 27
         }
+    },
+    {
+        &quot;title&quot;: &quot;Home&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Persistence .tools&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;DLL Hijacking&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;File Sharing Service&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Firefox Plugins&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'New Tiddler'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Process Hollowing&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Methodology&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 412.421875,
+            &quot;left&quot;: 247.6884765625,
+            &quot;width&quot;: 91.0615234375,
+            &quot;right&quot;: 338.75,
+            &quot;bottom&quot;: 428.421875,
+            &quot;height&quot;: 16
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Post-Exploitation&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 815.109375,
+            &quot;left&quot;: 55,
+            &quot;width&quot;: 105.0546875,
+            &quot;right&quot;: 160.0546875,
+            &quot;bottom&quot;: 831.109375,
+            &quot;height&quot;: 16
+        }
+    },
+    {
+        &quot;title&quot;: &quot;SANS Phases of an Attack&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 465.109375,
+            &quot;left&quot;: 55,
+            &quot;width&quot;: 165.7578125,
+            &quot;right&quot;: 220.7578125,
+            &quot;bottom&quot;: 481.109375,
+            &quot;height&quot;: 16
+        }
+    },
+    {
+        &quot;title&quot;: &quot;Framework Methodology&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 736.109375,
+            &quot;left&quot;: 55,
+            &quot;width&quot;: 154.0615234375,
+            &quot;right&quot;: 209.0615234375,
+            &quot;bottom&quot;: 752.109375,
+            &quot;height&quot;: 16
+        }
     }
 ]</pre>
 </div>
@@ -5553,7 +5640,7 @@ Error message and password prompt
 <div modified="20150508001714520" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div modified="20150507223915380" title="$:/state/sidebar">
+<div modified="20150508125410569" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div modified="20150507033155462" title="$:/state/tab/sidebar-{312696086}">
@@ -5717,6 +5804,20 @@ The difficulty of course is getting enough clues for reversing the formula.</pre
 <pre>* SPScan - Share Point Scanner
 * WPScan - WordPress Scanner http://wpscan.org/
 </pre>
+</div>
+<div created="20150508125111598" modified="20150508125227259" tags="Persistance" title="DLL Hijacking">
+<pre>Using SMB shares to detect DLL Hijacking Vectors
+http://carnal0wnage.attackresearch.com/2013/09/finding-executable-hijacking.html
+
+Here's a report of one such example of this behavior
+https://www.mandiant.com/blog/hikit-rootkit-advanced-persistent-attack-techniques-part-1-2/
+</pre>
+</div>
+<div created="20150508125255147" modified="20150508125316143" tags="Persistance" title="File Sharing Service">
+<pre>https://media.blackhat.com/eu-13/briefings/Williams/bh-eu-13-dropsmack-jwilliams-slides.pdf</pre>
+</div>
+<div created="20150508125348054" modified="20150508125407709" tags="Persistance" title="Firefox Plugins">
+<pre>http://research.zscaler.com/2012/09/how-to-install-silently-malicious.html</pre>
 </div>
 <div created="20150508023518629" modified="20150508023614948" tags="tags" title="Footprint">
 <pre>&lt;$list filter=&quot;[tag[Footprint]]+[sort[title]]&quot;&gt;
@@ -6048,6 +6149,9 @@ ai:~ #
 * &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/$list&gt;</pre>
 </div>
+<div created="20150508124830890" modified="20150508124947454" tags="Persistance Tools" title="Persistence .tools">
+<pre>[[pyrasite|https://github.com/lmacken/pyrasite]] - injecting arbitrary code into python processes</pre>
+</div>
 <div created="20150508033331332" modified="20150508033529781" tags="Methodology" title="Post-Exploitation">
 <pre>I forgot where I heard the Three-P's of Post-Exploitation from...
 
@@ -6058,6 +6162,19 @@ ai:~ #
 
 # Pillage
 # Pivot</pre>
+</div>
+<div created="20150508125521361" modified="20150508125953974" tags="Persistance" title="Process Hollowing">
+<pre>&lt;&lt;&lt;
+Legitimate process loaded into memory to act as a code container. Host process is created into a suspended mode. Bypasses antivirus
+&lt;&lt;&lt; [[source|http://www.slideshare.net/blackthorne/you-suck-at-memory-analysis]]
+
+To perform this in metasploit, run the following command at the meterpreter prompt
+
+```
+execute -m -d &lt;legitimate command&gt; -f &lt;hackertool&gt;
+```
+[[source|https://community.rapid7.com/community/metasploit/blog/2012/05/08/eternal-sunshine-of-the-spotless-ram]]
+</pre>
 </div>
 <div created="20150508032244928" modified="20150508032254419" tags="tags" title="Reference">
 <pre>&lt;$list filter=&quot;[tag[Reference]]+[sort[title]]&quot;&gt;
