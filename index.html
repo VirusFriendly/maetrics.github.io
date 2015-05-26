@@ -3972,7 +3972,7 @@ Error message and password prompt
 <pre>[[Home]]
 [[Currently Studying]]</pre>
 </div>
-<div current-tiddler="Currently Studying" modified="20150526130346115" title="$:/HistoryList" type="application/json">
+<div current-tiddler="Currently Studying" modified="20150526131632791" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;GettingStarted&quot;
@@ -6250,6 +6250,24 @@ Error message and password prompt
     },
     {
         &quot;title&quot;: &quot;Currently Studying&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Home&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Currently Studying'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Currently Studying&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Currently Studying'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Draft of 'Currently Studying'&quot;
+    },
+    {
+        &quot;title&quot;: &quot;Currently Studying&quot;
     }
 ]</pre>
 </div>
@@ -6283,7 +6301,7 @@ Error message and password prompt
 <div modified="20150525174922187" title="$:/state/tab/sidebar-{312696086}">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="Home [[Currently Studying]]" title="$:/StoryList">
+<div list="" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20150507021425190" modified="20150525173553836" title="$:/temp/NewTagName">
@@ -6455,10 +6473,42 @@ http://www.slideshare.net/techdude/scalable-web-architectures-common-patterns-an
 
 The difficulty of course is getting enough clues for reversing the formula.</pre>
 </div>
-<div created="20150525155645360" modified="20150526130346110" title="Currently Studying">
-<pre>! Host
-!! Reverse Engineering
-!!! Radare2
+<div created="20150525155645360" modified="20150526131632786" title="Currently Studying">
+<pre>! Bluetooth LE
+---
+
+''Goal:'' Detect, parse traffic, and communicate
+
+[[The NSA Playset Bluetooth Smart Attack Tools|https://www.youtube.com/watch?v=_Z4gYyrKVFM]]
+
+!! Lab
+
+*[[Bluepot - A Bluetooth Honeypot written in Java|https://github.com/andrewmichaelsmith/bluepot]]
+*[[RaMBLE - Android Bluetooth LE Scanner|https://play.google.com/store/apps/details?id=com.contextis.android.BLEScanner]]
+
+! GPU Debugging
+---
+
+''Goal:'' malware and rootkits are living in GPU, need tools/techniques to analyze this space.
+
+! HTTP/2
+---
+''Goal:'' Detect functionality and parse traffic
+
+! MPTCP
+---
+
+''Goal:'' Detect functionality, parse traffic, and communicate
+
+Instructional videos
+
+* [[Multipath TCP Breaking Todays Networks with Tomorrows Protocols|https://www.youtube.com/watch?v=Ss2zmwzKG3k]] At blackhat
+* [[Multipath TCP Breaking Todays Networks with Tomorrows Protocols |https://www.youtube.com/watch?v=yNhnsADkDBg]] A year later
+* [[Google Techtalk on Multipath TCP|https://www.youtube.com/watch?v=02nBaaIoFWU]]
+* [[IETF Multipath TCP Tutorial|https://www.youtube.com/watch?v=Wp0Kr3B64tA]]
+
+! Radare2
+---
 
 ''Goal:'' The free version of IDApro does not handle (among other things) 64bit programs. Looking into using Radare2 to fill this space cheaply. It can also replace Immunity Debugger with it scripting and debugging features and being cross-platform via remote servers. Additionally, a cross-platform scriptable debugger makes it possible to implement advanced fuzzing techniques described in [[High Performance Fuzzing|https://www.youtube.com/watch?v=Di74wGAHysA]].
 
@@ -6488,55 +6538,27 @@ To get an IDApro like function graph...
 radare2 -nq -c 'aa ; ag main &gt; main.dot' &lt;target_binary&gt;; xdot main.dot
 ```
 
-!!! GPU Debugging
 
-''Goal:'' malware and rootkits are living in GPU, need tools/techniques to analyze this space.
 
-! Network
-!! HTTP/2
-''Goal:'' Detect functionality and parse traffic
-
-!! MPTCP
-
-''Goal:'' Detect functionality, parse traffic, and communicate
-
-Instructional videos
-
-* [[Multipath TCP Breaking Todays Networks with Tomorrows Protocols|https://www.youtube.com/watch?v=Ss2zmwzKG3k]] At blackhat
-* [[Multipath TCP Breaking Todays Networks with Tomorrows Protocols |https://www.youtube.com/watch?v=yNhnsADkDBg]] A year later
-* [[Google Techtalk on Multipath TCP|https://www.youtube.com/watch?v=02nBaaIoFWU]]
-* [[IETF Multipath TCP Tutorial|https://www.youtube.com/watch?v=Wp0Kr3B64tA]]
-
-!! SCADA
+! SCADA
+---
 
 ''Goal:'' Detect functionality, parse traffic, and communicate
 
 [[Previous experience|http://www.iseedeadpackets.net/2014/10/bsides-dc-14-industrial-control-systems.html]]
 
-!!!lab
+!!Lab
 *[[A Virtual SCADA Laboratory for Cybersecurity Pedagogy and Research |https://www.youtube.com/watch?v=bDssT89GhE4]]
 *ftp://ftp.hpc.msstate.edu/outgoing/thornton/VMs%20and%20Labs.zip
 
-! Radio
-
-!! Bluetooth LE
-
-''Goal:'' Detect, parse traffic, and communicate
-
-[[The NSA Playset Bluetooth Smart Attack Tools|https://www.youtube.com/watch?v=_Z4gYyrKVFM]]
-
-!!! lab
-
-*[[Bluepot - A Bluetooth Honeypot written in Java|https://github.com/andrewmichaelsmith/bluepot]]
-*[[RaMBLE - Android Bluetooth LE Scanner|https://play.google.com/store/apps/details?id=com.contextis.android.BLEScanner]]
-
-!! Zigbee
+! Zigbee
+---
 
 ''Goal:'' Detect signal, demodulate, parse traffic, and communicate
 
 [[Ember Zigbee Tutorial |https://www.youtube.com/playlist?list=PL24BC4F9A51A9B5B5]]
 
-!!!cheap lab parts
+!!Lab
 * $45 [[dongle|http://www.atmel.com/tools/rzusbstick.aspx#buy]]
 * $55 [[GE - In-Wall Smart Switch|http://www.bestbuy.com/site/ge-in-wall-smart-switch-white/2065113.p?id=1219522639958&amp;skuId=2065113]]
 * $165 [[Kwikset 912 Smartcode Electronic Deadbolt|http://www.amazon.com/Kwikset-SmartCode%C2%AE-Electronic-featuring-SmartKey%C2%AE/dp/B004ECHIYG]]
