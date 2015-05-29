@@ -139,6 +139,8 @@ Error message and password prompt
 
 <li>$:/state/showeditpreview</li>
 
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab/sidebar--1835078512</li>
@@ -269,6 +271,8 @@ Error message and password prompt
 
 <li>Creating word lists with jtr</li>
 
+<li>CTF Bot</li>
+
 <li>Current Projects</li>
 
 <li>Currently Studying</li>
@@ -341,7 +345,7 @@ Error message and password prompt
 
 <li>Maladjusted</li>
 
-<li>Metasploit</li>
+<li>Metasploit Modules</li>
 
 <li>Methodology</li>
 
@@ -351,7 +355,7 @@ Error message and password prompt
 
 <li>MySQL - File Retrival</li>
 
-<li>Nessus</li>
+<li>Nessus Scripts</li>
 
 <li>Netcat Proxy Logger</li>
 
@@ -389,7 +393,7 @@ Error message and password prompt
 
 <li>Radare2-based Fuzzer</li>
 
-<li>Recon-NG</li>
+<li>Recon-NG Modules</li>
 
 <li>Reference</li>
 
@@ -407,7 +411,7 @@ Error message and password prompt
 
 <li>SCADA/ICS</li>
 
-<li>SET</li>
+<li>SET Modules</li>
 
 <li>SSH Metadata Relationships.png</li>
 
@@ -435,7 +439,7 @@ Error message and password prompt
 
 <li>XSS Testing Methodology</li>
 
-<li>ZAP</li>
+<li>ZAP Modules</li>
 
 <li>Zigbee</li>
 
@@ -5974,8 +5978,11 @@ Error message and password prompt
 <div modified="20150529023952840" title="$:/state/plugin-info--896887961-$:/core">
 <pre>no</pre>
 </div>
-<div modified="20150529164408116" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div modified="20150529232256790" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
+<div modified="20150529233056778" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div modified="20150529023947275" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
@@ -6000,7 +6007,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150529221125598" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150529232837680" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -6586,6 +6593,175 @@ Generating every permutation
 john --incremental --stdout
 ```</pre>
 </div>
+<div created="20150529231738975" modified="20150529233051523" tags="projects draft" title="CTF Bot">
+<pre>Collection of ideas for future CTFs which require speed to dominate targets
+
+! Hack Bot
+
+* Determine if hosts are fresh or dirty
+** Fulcrum
+*** repeatedly ping all IPs not up yet
+**** local network - listen for any new arps - build a better arpwatch
+**** remote network - look for changes in responses (router error versus host response or nothing)
+*** profile new host for OS version, open ports, banners, service version, and user list
+**** host is considered ‘fresh’ unless ports go down or banners change
+**** host is considered ‘refresh’ if ports and banners return
+*** if host is ‘dirty’ check for new open ports that could be RATs
+*** store details in DB
+* exploit fresh hosts
+** Manager
+*** find a working exploit - fire against all similar targets
+*** find a password or hash - use them against all other systems with all known usernames
+*** find new username - bruteforce on all fresh hosts
+*** find new password - attempt login on all fresh hosts
+*** find new hashes - launch cracker
+*** find new fresh host
+**** attempt known credientials
+**** attempt known exploit for version
+**** attempt bruteforce against known users
+* Lever
+** parse argument for %host %fresh %dirty %refresh %user %passwd
+** go through a loop executing the argument with parsed data
+* reexploit refreshed hosts
+** Manager B
+*** upon receiving an alert of a refreshed host
+*** log in with known credientals
+*** exploit with known methods
+*** upload and run FootBall
+
+! Persistance Bot
+
+&quot;&quot;&quot;
+Windows Persistence Dropper
+
+Install root certificate 
+https://www.mandiant.com/blog/hikit-rootkit-advanced-persistent-attack-techniques-part-2/
+
+If Web Service Then Drop C99shell
+
+Drop Installer as oci.dll and restart MS DTC
+installer http://blog.spiderlabs.com/2013/03/mimicking-attackers-building-malware-for-ccdc.html 
+oci.dll https://www.mandiant.com/blog/hikit-rootkit-advanced-persistent-attack-techniques-part-1-2/
+Every minute check flagfile for hash
+
+Modify Meterpreter to to be a dll and exe that checks a mutex before connecting back
+inject into processes
+http://www.skullsecurity.org/wiki/index.php/.dll_Injection_and_Patching 
+
+Unix Persistence Dropper
+- remove everyone elses ssh key
+- Drop SSH keys in every user directory (chattr +i, immutable)
+- Setup a honeypot Firewall blocker
+-- http://www.securitygeneration.com/security/linux-bash-ncat-honeyport-script-with-iptables-and-dome9-support/
+-- http://stackoverflow.com/questions/11584824/run-a-system-command-when-an-iptables-rule-is-matched
+-- have it communicate bad IPs to other hosts
+-- find a free IP, bind a virtual interface to it, block anyone that connects to it
+
+lock and rat host
+Child A
+every 42 seconds overwrite ‘flag’ file with team hash
+Child B
+meterpreter reverse TCP payload
+Child C
+check every 30 second for new processes
+send error Manager, ensure Dad is set for launch, reboot server
+Mom
+On launch, Start children
+check each second that Dad and children are running
+&quot;&quot;&quot;
+
+! Pillage Bot
+
+&quot;&quot;&quot;
+http://lockboxx.blogspot.com/2013/08/host-based-linux-info-gathering.html
+
+3) mitm
+
+4) sniff
+use snort to detect credentials and mysterious protocols
+exploit capture and replay
+
+5) keylogger
+search for passwords (word frequency analysis)
+
+6) file snarfing
+look for passwords
+use clamav/yara to locate encryption information
+
+Grab .key .pem and .pfx files
+&quot;&quot;&quot;
+
+! Exploit capture and Replay
+&quot;&quot;&quot;
+write 1 to ipforward
+
+spoof all target ip addresses
+
+listen for new mac addresses
+  if server has vmware mac address never seen before and is in target addresses
+    set addresses as static macs
+
+if destination is target
+  copy packets to buffer
+  scan buffer for magic ip address (maybe masked)
+  if magic ip sequence found
+    overwrite ip sequence, store to buffer
+    fire off buffer
+
+---
+Child D
+sniff connection
+detect exploits fired against a captured host
+have a handler for all types of exploit running in metasploit
+detect all common metasploit shellcode
+patch shellcode with our metasploit server and port
+send exploit to Manager
+
+---
+invisible proxy 65530
+meterpreter: use exploit/multi/handler
+
+if starting packet is SSL
+  pass data to metaterpreter port 65531
+else
+  pass data to reverse shell port 65532
+---
+create linux kernel module that locks /flag
+create static lsof that doesnt print /flag
+&quot;&quot;&quot;
+
+! Collab Notes
+
+Probably replaced with etherpad
+
+---
+
+&quot;&quot;&quot;
+redteam communicates via Wave in a Box
+http://incubator.apache.org/wave/demo-servers.html
+
+scanner bots communicate to Wave in a Box via Wave Federation Protocol
+http://en.wikipedia.org/wiki/Google_Wave_Federation_Protocol
+
+pillage and persistence botnet use mDNS for auto-discovery and XMPP for C&amp;C
+http://en.wikipedia.org/wiki/XMPP
+
+&quot;&quot;&quot;
+
+! Unorganized notes
+---
+xmpp/mdns/wave
+
+feature:
+identify the perspective of data (was the data gathered remotely or by pivot)
+
+Armitage
+
+Lair:
+http://www.youtube.com/watch?v=LipDFqP14oU
+https://github.com/fishnetsecurity/Lair/
+---</pre>
+</div>
 <div created="20150529021854683" modified="20150529022350007" title="Current Projects">
 <pre>[[Never hack in a cave.|https://www.youtube.com/watch?v=0SARbwvhupQ]] I put out my projects out in the open. You can steal them, it doesn't bother me as I come up with more ideas than I can complete in one lifetime.
 
@@ -7122,7 +7298,7 @@ http://blogs.technet.com/b/heyscriptingguy/archive/2009/12/16/hey-scripting-guy-
 <div created="20150529033511340" modified="20150529033748416" tags="projects" title="Maladjusted">
 <pre>Need to extend my prior research of ELF Program and Section headers to disguise a malicious ELF binary inside a benign ELF binary</pre>
 </div>
-<div created="20150529221110996" modified="20150529231133506" tags="projects" title="Metasploit">
+<div created="20150529221110996" modified="20150529231521063" tags="projects" title="Metasploit Modules">
 <pre>! Bridge Jumping
 
 Using FastIP to hop vlans
@@ -7286,7 +7462,7 @@ select hex(load_file(‘file’));
 
 [[source|https://github.com/jakxx/Scripts/blob/master/mysqlsam.py]]</pre>
 </div>
-<div created="20150529125636992" modified="20150529125816423" tags="projects" title="Nessus">
+<div created="20150529125636992" modified="20150529231636751" tags="projects" title="Nessus Scripts">
 <pre>''repository'': https://github.com/maetrics/nessus-scripts
 
 ! LHF Report
@@ -7593,7 +7769,7 @@ Additionally the free version of IDApro doesn't support x64 architecture. ODA do
 <div created="20150529014821983" modified="20150529015011126" tags="projects" title="Radare2-based Fuzzer">
 <pre>[[In memory fuzzing in linux with gdb and python|https://web.archive.org/web/20131108033609/http://securityadventures.wordpress.com/2011/10/17/in-memory-fuzzing-in-linux-with-gdb-and-python/]]</pre>
 </div>
-<div created="20150529125941855" modified="20150529130840450" tags="projects" title="Recon-NG">
+<div created="20150529125941855" modified="20150529231623499" tags="projects" title="Recon-NG Modules">
 <pre>''repository'': https://github.com/maetrics/recon-scripts
 
 ! Recursive DNS
@@ -7773,7 +7949,7 @@ Other resources
 *[[A Virtual SCADA Laboratory for Cybersecurity Pedagogy and Research |https://www.youtube.com/watch?v=bDssT89GhE4]]
 *ftp://ftp.hpc.msstate.edu/outgoing/thornton/VMs%20and%20Labs.zip</pre>
 </div>
-<div created="20150529130844451" modified="20150529131031647" tags="projects" title="SET">
+<div created="20150529130844451" modified="20150529231558459" tags="projects" title="SET Modules">
 <pre>! Extended email spoof
 
 add to the headers to hide the origin mail server</pre>
@@ -7929,7 +8105,7 @@ the leading quote in your input will negate the first quote, and the second quot
  me:  If you're looking to go further with this, I would suggest building an input string using  https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet http://ha.ckers.org/xsscalc.html and ofcourse, the BeEF Framework
 </pre>
 </div>
-<div created="20150529130844334" modified="20150529131758421" tags="projects" title="ZAP">
+<div created="20150529130844334" modified="20150529231545073" tags="projects" title="ZAP Modules">
 <pre>''repository'': https://github.com/maetrics/zap-scripts
 
 ! Incorporate features from other tools
