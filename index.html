@@ -341,6 +341,8 @@ Error message and password prompt
 
 <li>Maladjusted</li>
 
+<li>Metasploit</li>
+
 <li>Methodology</li>
 
 <li>Multi-Path TCP</li>
@@ -5978,7 +5980,7 @@ Error message and password prompt
 <div modified="20150529023947275" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
-<div modified="20150529164740048" title="$:/state/tab/sidebar--1835078512">
+<div modified="20150529214250793" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] About" title="$:/StoryList">
@@ -5998,7 +6000,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150529155226379" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150529221125598" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -6223,7 +6225,7 @@ At this point it is largely for experimentation by @zooko.
 <div created="20150529024008477" modified="20150529024014179" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20150529023901040" modified="20150529163412006" title="$:/temp/search">
+<div created="20150529023901040" modified="20150529231140921" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20150529024005439" modified="20150529024005439" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://tiddlywiki.com/library/v5.1.8/index.html" url="http://tiddlywiki.com/library/v5.1.8/index.html">
@@ -7120,6 +7122,126 @@ http://blogs.technet.com/b/heyscriptingguy/archive/2009/12/16/hey-scripting-guy-
 <div created="20150529033511340" modified="20150529033748416" tags="projects" title="Maladjusted">
 <pre>Need to extend my prior research of ELF Program and Section headers to disguise a malicious ELF binary inside a benign ELF binary</pre>
 </div>
+<div created="20150529221110996" modified="20150529231133506" tags="projects" title="Metasploit">
+<pre>! Bridge Jumping
+
+Using FastIP to hop vlans
+
+* http://support.3com.com/infodeli/tools/nic/3c90x/ethercd/english/usrguid.pdf
+* http://www.pulsewan.com/data101/layer3_switching_basics.htm
+* http://support.3com.com/nav/dynamic_access/instructions.htm
+* http://www.linktionary.com/f/fastip.html
+* http://www.faqs.org/rfcs/rfc2332.html
+* http://www.cisco.com/en/US/tech/tk583/tk372/technologies_white_paper09186a008018983e.shtml
+* http://sourceforge.net/projects/opennhrp/
+* http://www.cisco.com/en/US/docs/ios/12_4/ip_addr/configuration/guide/hadnhrp_ps6350_TSD_Products_Configuration_Guide_Chapter.html
+* http://support.3com.com/nav/dynamic_access/instructions.htm
+* http://www.thefreelibrary.com/3Com+announces+next+steps+for+its+fast+IP+product+strategy.-a019059038
+* http://urania.dis.eafit.edu.co/cursos/st0059/material/RedesLanWan/lans/gigabit/ip_speed.html
+* http://www.cisco.com/en/US/tech/tk648/tk361/technologies_tech_note09186a0080094adb.shtml
+
+proxy arp, on by default
+
+can arp scan hosts on the other side of the router
+
+can spoof as a host on the other side of the router as well (router will save your arp responses)
+
+arp scan the other network, then vlan hop
+
+! Docket
+
+Create a module that requests a docker container on an open docker daemon with the root filesystem and overwrite the password/shadow files.
+
+&lt;&lt;&lt;
+Specifically, Docker allows you to share a directory between the Docker host and a guest container; and it allows you to do so without limiting the access rights of the container. This means that you can start a container where the /host directory will be the / directory on your host; and the container will be able to alter your host filesystem without any restriction. This sounds crazy? Well, you have to know that all virtualization systems allowing filesystem resource sharing behave the same way. Nothing prevents you from sharing your root filesystem (or even your root block device) with a virtual machine.
+&lt;&lt;&lt; [[source|http://docs.docker.com/articles/security/#docker-daemon-attack-surface]]
+
+! mDNS HTTP Advertisement
+
+Advertise your malicious web server and get placed into Safari’s bookmarks
+
+! ~MitM Framework
+
+(these are old ideas which I'm questioning if they're even worth it)
+ 
+Bring Subterfuge features into Metasploit
+https://code.google.com/p/subterfuge/
+
+Also bring evilgrade’s features into Metasploit
+https://github.com/infobyte/evilgrade
+
+! ~MySQL file grab
+[[MySQL - File Retrival]]
+
+! WPAD PAC ~BeEF Persistance
+
+module creates a javascript PAC file
+
+```
+function FindProxyForURL(url, host)
+{
+        return &quot;PROXY proxy.example.com:8080; DIRECT&quot;;
+}
+```
+
+then install this PAC with a url like file:///C/location/beef.pac
+
+! Skype/GTalk c2
+
+* Create a Skype Meterpreter Module
+* Create a Skype Shell Module
+* Skype Socks Proxy
+** server/endpoint all in one
+** both can operate at the same time
+** Server, code that allows socks clients to connect to socks, encodes the data, and then feeds it over skype to the endpoint
+** Endpoint, code that recieves the encoded data from skype, decodes it, reads the socks protocol, and begins processing packets.
+** Server mode begins whenever the user establishes an endpoint. It’ll being listening to port ** 1080 (user configurable)
+Endpoint mode operates whenever the user accepts a connection from a server.
+
+Gtalk Version - http://www.gbridge.com/
+
+''Skype AP2AP protocol''
+
+&lt;&lt;&lt;
+The AP2AP feature in Skype allows two API clients to exchange information without the communication being visible on the client. Application to application communication has the following characteristics:
+
+From Skype version 3.1.0.150 it is no longer required for users to be in each other's contact list to be able to establish AP2AP connections. The only requirement for AP2AP connections is that both users have to be online.
+From API version 3.0, you can establish AP2AP connections between several instances of Skype that are logged in with the same skypename.
+Connections are only attempted to connectable users at CONNECT.
+Connections are established only when there is a matching application on the other side.
+When connection is dropped by one of the parties, all undelivered (stream) data will be lost. This is typically a problem when connection to remote aplication is dropped by a stream sender before receiver has acknowledged that it has received entire stream.
+The application name is limited to 32 bytes.
+Idle connections are dropped in a specific amount of time (typically 8 minutes).
+When connection is relayed, throttling is engaged.
+If the other party is logged in to multiple Skype instances, a stream for each instance is created.
+The stream write provides reliable transmission to deliver a large amount of data.
+The maximum amount of write to a stream can be 0xFFFF bytes long.
+Any character except 0x00 is allowed in a message.
+Datagrams are unreliable packets sent over a network (usually translates to UDP).
+The maximum size of datagrams is 1400 bytes.
+There is no guarantee that datagrams will be delivered.
+&lt;&lt;&lt;
+
+!  Split Handshake
+
+Potentially evade IDS create the ability for Metasploit servers to perform split handshakes
+
+3 TCP connection styles
+
+# normal 3 way handshake
+# simultaneous handshake
+# split handshake
+
+http://nmap.org/misc/split-handshake.pdf
+
+! TOR Meterpreter
+
+Create a USB stick that creates a TOR hidden server that provides a bind or (reverse through TOR) meterpreter/shell 
+
+! Maladjusted
+
+Create a payload generator that uses [[Maladjusted]] techniques</pre>
+</div>
 <div created="20150508025320514" modified="20150508025428213" tags="tags" title="Methodology">
 <pre>&lt;$list filter=&quot;[tag[Methodology]]+[sort[title]]&quot;&gt;
 
@@ -7177,7 +7299,7 @@ XSL for http://averagesecurityguy.info/2012/07/05/low-hanging-fruit/</pre>
 <pre>Look into extending NetWitness to perform Artificial Ignorance
  https://github.com/maetrics/pcap-ai</pre>
 </div>
-<div created="20150529042923357" modified="20150529044830747" tags="projects" title="Nmap Scripts">
+<div created="20150529042923357" modified="20150529230234518" tags="projects" title="Nmap Scripts">
 <pre>''repository:'' https://github.com/maetrics/nmap-scripts
 
 ! DHCP Probe
@@ -7277,7 +7399,16 @@ Test of the target supports Multipath TCP
 
 https://www.youtube.com/watch?v=yNhnsADkDBg&amp;feature=youtu.be&amp;t=31m28s
 
-https://twitter.com/secvalve/status/600421630318419969</pre>
+https://twitter.com/secvalve/status/600421630318419969
+
+! Service Discovery Scanners
+
+* SLP
+* DNS-SD 224.0.0.251
+* UPnP SSDP M-SEARCH 239.255.255.0
+* WS-SD 239.255.255.0
+* Jini - Java SD
+* Session announcement Protocol (SAP) for advertising Real-time Transport Protocol</pre>
 </div>
 <div created="20150507023215823" modified="20150507024151404" tags="Discovery" title="OpenVPN Management Port">
 <pre>```
@@ -7517,7 +7648,7 @@ Query Whois and get name servers</pre>
 * &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20150529025432952" modified="20150529030732260" tags="draft" title="Reliable Exploits">
+<div created="20150529025432952" modified="20150529214429706" tags="draft" title="Reliable Exploits">
 <pre>If you're at a CTF or a pen-test and you need a stable exploit quickly, these are the best ones to fall back to,
 
 ! Malware's favorite hits
@@ -7525,10 +7656,10 @@ Query Whois and get name servers</pre>
 The nature of malware depends on the use stable exploits. 
 
 |!MS Vulnerability|!Malware|!Metasploit module|
-|MS03- MS DCOM| | |
-|MS08-067|conflicker| | |
-|MS09-025|flame| | |
-|MS10-061|stuxnet| | |
+|MS03-026| |exploit/windows/dcerpc/ms03_026_dcom|
+|MS08-067|conflicker|exploit/windows/smb/ms08_067_netapi|
+|MS09-025|flame| |
+|MS10-061|stuxnet|windows/smb/ms10_061_spoolss|
 
 ! Qualys Top 10
 [[source|https://www.qualys.com/research/top10/]]
