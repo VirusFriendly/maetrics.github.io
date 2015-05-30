@@ -423,6 +423,8 @@ Error message and password prompt
 
 <li>Tool Frameworks</li>
 
+<li>Toyota Keyless Entry Remote Analysis</li>
+
 <li>Traversal</li>
 
 <li>Vhost enumeration through HTTPS</li>
@@ -5978,8 +5980,8 @@ Error message and password prompt
 <div modified="20150529023952840" title="$:/state/plugin-info--896887961-$:/core">
 <pre>no</pre>
 </div>
-<div modified="20150529232256790" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div modified="20150530160233738" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div modified="20150529233056778" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -6007,7 +6009,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150529232837680" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150530154848168" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -7993,6 +7995,33 @@ http://www.experts-exchange.com/articles/2155/Keyboard-Remapping-CAPSLOCK-to-Ctr
 * SET
 * OWASP ZAP (Java)
 * Wireshark (Lua)</pre>
+</div>
+<div created="20150530154518134" modified="20150530160912358" tags="projects" title="Toyota Keyless Entry Remote Analysis">
+<pre>---
+|FCC ID|HYQ12BBY|
+|FREQUENCY|315 MHz|
+|IC|1551A-12BBY|
+|BATTERY|CR2016|
+|CHIP # ON CIRCUIT BOARD|D 151811|
+
+[[source|http://www.keylessremotes4u.com/TOYOTA-3-BUTTON-KEYLESS-ENTRY-REMOTE-HYQ12BBY-122-KEY-FOB-P324.aspx]]
+
+Appears from the information they're asking there are different models of keyless entry, likely to prevent one remote from unlocking multiple cars.
+
+* Identifier 1: G, Dot, or Blank on the key where the metal meets the plastic
+* Identifier 2: A, B, C, or D on the inside of the plastic near where it meets the key
+
+Based on these identifiers, I'm guessing there are 12 types of codes...which seems small. Perhaps year, model, and vin are important as well. 
+---
+Information based on FCC ID search
+
+Frequency: 314.35
+
+Image of the IC board https://apps.fcc.gov/eas/GetApplicationAttachment.html?id=478964
+
+[[source|https://apps.fcc.gov/oetcf/eas/reports/GenericSearchResult.cfm?RequestTimeout=500]]
+
+---</pre>
 </div>
 <div created="20150525151644318" modified="20150525151739439" tags="tags" title="Traversal">
 <pre>* [[Bookmarks|https://delicious.com/cagents/traversal]]
