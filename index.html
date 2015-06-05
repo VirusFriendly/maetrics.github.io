@@ -6069,7 +6069,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Where to Start?]] [[Currently Studying]] [[Windows 10 Health &amp; Wellness App]] About" title="$:/StoryList">
+<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] [[Analysis of CHS 435HDC]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6461,7 +6461,7 @@ python vol.py hashdump -f ~/memory.dmp --profile=&lt;OS Profile&gt; --sys-offset
 
 [[source|http://pen-testing.sans.org/blog/2012/08/03/pen-test-privilege-escalation-through-suspended-virtual-machines]]</pre>
 </div>
-<div created="20150529032039549" modified="20150603033831390" tags="projects" title="Analysis of CHS 435HDC">
+<div created="20150529032039549" modified="20150605052442405" tags="projects" title="Analysis of CHS 435HDC">
 <pre>''goal:'' This is along the lines of hack yourself (or hack what you have).
 
 I have a Set Top Box (STB), so lets explore the attack surfaces and see if we can find miss-configurations or vulnerabilities.
@@ -6490,6 +6490,9 @@ Research into similar devices
 
 Network Ports: 
 
+* 68/udp dhcpc
+* 161/udp snmp
+* 1900/udp upnp
 * 7547/tcp  no fingerprint
 * 7612/tcp  no fingerprint
 * 7911/tcp  omapi  ISC (BIND|DHCPD) OMAPI
@@ -6500,6 +6503,14 @@ Network Ports:
 * 18863/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp18863.sf]]
 * 63100/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp63100.sf]] Logging port
 * 63147/tcp no fingerprint
+
+! SNMP 161/udp
+
+Currently attempting a bruteforce on the community string
+
+! ~UPnP 1900/udp
+* Server: Linux/2.6.24-1.2.59.2_full-highmem UPnP/1.0 Cisco-UPnP/1.8.225
+* Location: /upnp_descriptor_0
 
 ! DLNA ~UPnP 9999/tcp
 
