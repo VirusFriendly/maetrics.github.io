@@ -277,6 +277,8 @@ Error message and password prompt
 
 <li>Acquiring NT Hashes from Memory</li>
 
+<li>Amateur Radio License</li>
+
 <li>Analysis of CHS 435HDC</li>
 
 <li>Android Manifest.xml</li>
@@ -326,6 +328,8 @@ Error message and password prompt
 <li>DLL Hijacking</li>
 
 <li>DoD IO Doctrine</li>
+
+<li>Draft of 'Toyota Keyless Entry Remote Analysis'</li>
 
 <li>Escalate</li>
 
@@ -6069,7 +6073,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] [[Analysis of CHS 435HDC]] About" title="$:/StoryList">
+<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] [[Draft of 'Toyota Keyless Entry Remote Analysis']] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6086,7 +6090,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150604192315372" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150606042110552" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -6460,6 +6464,11 @@ python vol.py hashdump -f ~/memory.dmp --profile=&lt;OS Profile&gt; --sys-offset
 ```
 
 [[source|http://pen-testing.sans.org/blog/2012/08/03/pen-test-privilege-escalation-through-suspended-virtual-machines]]</pre>
+</div>
+<div created="20150606041904470" modified="20150606042637232" tags="study" title="Amateur Radio License">
+<pre>I'm not looking to become a ham, but to for sdr projects that require transmission
+
+http://www.kb6nu.com/study-guides/</pre>
 </div>
 <div created="20150529032039549" modified="20150605052442405" tags="projects" title="Analysis of CHS 435HDC">
 <pre>''goal:'' This is along the lines of hack yourself (or hack what you have).
@@ -7012,6 +7021,100 @@ Used here, as in the Lockheed paper for a defense strategy for dealing hostile a
 
 * &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/$list&gt;</pre>
+</div>
+<div created="20150530154518134" draft.of="Toyota Keyless Entry Remote Analysis" draft.title="Toyota Keyless Entry Remote Analysis" modified="20150606185940994" tags="projects" title="Draft of 'Toyota Keyless Entry Remote Analysis'">
+<pre>! Initial Recon
+---
+
+|FCC ID|HYQ12BBY|
+|FREQUENCY|315 MHz|
+|IC|1551A-12BBY|
+|BATTERY|CR2016|
+|CHIP # ON CIRCUIT BOARD|D 151811|
+
+[[source|http://www.keylessremotes4u.com/TOYOTA-3-BUTTON-KEYLESS-ENTRY-REMOTE-HYQ12BBY-122-KEY-FOB-P324.aspx]]
+
+Appears from the information they're asking there are different models of keyless entry, likely to prevent one remote from unlocking multiple cars.
+
+* Identifier 1: G, Dot, or Blank on the key where the metal meets the plastic
+* Identifier 2: A, B, C, or D on the inside of the plastic near where it meets the key
+
+Based on these identifiers, I'm guessing there are 12 types of codes...which seems small. Perhaps year, model, and vin are important as well. 
+
+Based on [[FCC ID search||https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=7g2j1WGQrnWaWRD94FMNxA%3D%3D&amp;fcc_id=HYQ12BBY]] Frequency: 314.35 mhz
+
+
+! Initial Survey
+---
+
+First attempt to find signal after pressing the lock, unlock, lock buttons.
+
+[img[keylessentry.png]]
+
+! Additional Research
+---
+
+I continued researching, perhaps the initial site had the wrong information.
+
+After surfing some more, I stumbled across this [[page|http://www.keylessremotes4u.com/TOYOTA-SCION-3-BUTTON-KEYLESS-REMOTE-ENTRY-M0ZB41TG-122-KEY-FOB-P327C39031.aspx]] as other pages referenced the Scion 3 Button remote for the 2009 Yaris along with the Toyota remote.
+
+[[FCC ID search|https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=dlxposRUU0ukTrPeRuN1iQ%3D%3D&amp;fcc_id=MOZB41TG]] shows this as 312.5 mhz
+
+Found the signal in the neighborhood at 312.127mhz
+
+It could very well be that my radio is off, I'll look into verifying that later.
+
+[img[keylessentry2.png]]
+
+! Signal Analysis
+---
+
+I found the frequency, now what? See what other people do.
+
+* http://blog.kismetwireless.net/2013/08/playing-with-hackrf-keyfobs.html
+* http://greatscottgadgets.com/sdr/8/
+
+[img[keylessentry7.png]]
+
+Analyzing the magnitude reveals the OOK nature of the signal
+
+[img[keylessentry11.png]]
+
+
+! Decode Signal
+---
+
+Next plan is to create an OOK demodulator mainly to get more familiar with GNUradio
+
+http://www.reddit.com/r/GNURadio/comments/1mgfkc/ook_remote_control/
+
+Following the suggestion of one [[comment|http://www.reddit.com/r/GNURadio/comments/1mgfkc/ook_remote_control/cc97awy]] I swapped the complex to mag converter with a complex to mag squared converter, and added a threshold, and got the following result which is much more cleaned up.
+
+[[Picture here]]
+
+But I don't know how to implement his other suggestions of bit synchronization, slicing and framing into GNU Radio.
+
+More searching, I found a number of similar projects.
+
+* http://adamsblog.aperturelabs.com/2013/03/you-can-ring-my-bell-adventures-in-sub.html
+* https://github.com/alexbirkett/ever-flourish-remote-control-plug
+* http://www.irrational.net/2014/03/22/reverse-engineering-a-ceiling-fan/
+
+I also found two articles that may contain the answers I need.
+
+I first found [[this article|http://www.ni.com/example/13192/en/]], which doesn't have references to GNU radio, but provided details for me to create my own custom blocks if needed. I tried implementing the &quot;rising edge detection&quot; with Gnu Radio's &quot;Peak Detector&quot; but I was stumped after that for manually counting how many samples were in the peak to determine short and long peaks. There doesn't seem to be a way to increment variables from non-UI blocks, or anything that would help to replicate their design. The best thing I can think of is creating a custom peak count to magnitude block that outputs the number of consecutive peak samples as an amplitude.
+
+The section &quot;Counting the Bits&quot; from [[this article from Inguardians|http://www.inguardians.com/pubs/GRC_signal_analysis_InGuardians_v1.pdf]] explains how to use the &quot;Clock Recovery MM&quot; and the &quot;Bit Slicer&quot;. If this works out, this may replace my need to create custom blocks. Though the custom block maybe useful in future reverse engineering.
+
+! Related References
+---
+* http://samy.pl/opensesame/
+* https://twitter.com/Killswitch_GUI/status/606494068286160896/photo/1
+
+! Acknowledgements
+---
+
+Special thanks to Corey for pointing me to very useful references</pre>
 </div>
 <div created="20150525151344136" modified="20150525151410361" tags="tags" title="Escalate">
 <pre>* [[Bookmarks|https://delicious.com/cagents/escalate]]
