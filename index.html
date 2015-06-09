@@ -341,6 +341,8 @@ Error message and password prompt
 
 <li>Git Repositories</li>
 
+<li>GNU Radio Blocks</li>
+
 <li>Google Hacking</li>
 
 <li>Google Hacking Google Dorks</li>
@@ -6083,7 +6085,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150606042110552" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150609182109935" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -7076,6 +7078,14 @@ git reset --hard
 
 Now you have a mirror of the git repository on your system
 https://blog.skullsecurity.org/2012/using-git-clone-to-get-pwn3d</pre>
+</div>
+<div created="20150609182100603" modified="20150609185426100" tags="projects" title="GNU Radio Blocks">
+<pre>!Counting Block
+---
+
+Creating a custom count to magnitude block that outputs the number of consecutive one samples as an amplitude, and resets on receiving a 0 signal. To replicate this [[scope|http://www.ni.com/cms/images/devzone/tut/image016_20110809224834.jpg]] from this [[article|http://www.ni.com/example/13192/en/]]
+
+https://gnuradio.org/redmine/projects/gnuradio/wiki/BlocksCodingGuide</pre>
 </div>
 <div created="20150507222610283" modified="20150529040542454" tags="Footprint [[Original Research]]" title="Google Hacking">
 <pre>!Authentication Files
@@ -8146,7 +8156,7 @@ http://www.experts-exchange.com/articles/2155/Keyboard-Remapping-CAPSLOCK-to-Ctr
 * OWASP ZAP (Java)
 * Wireshark (Lua)</pre>
 </div>
-<div created="20150530154518134" modified="20150606204440875" tags="projects" title="Toyota Keyless Entry Remote Analysis">
+<div created="20150530154518134" modified="20150609192041518" tags="projects" title="Toyota Keyless Entry Remote Analysis">
 <pre>! Initial Recon
 ---
 
@@ -8226,7 +8236,7 @@ More searching, I found a number of similar projects.
 
 I also found two articles that may contain the answers I need.
 
-I first found [[this article|http://www.ni.com/example/13192/en/]], which doesn't have references to GNU radio, but provided details for me to create my own custom blocks if needed. I tried implementing the &quot;rising edge detection&quot; with Gnu Radio's &quot;Peak Detector&quot; but I was stumped after that for manually counting how many samples were in the peak to determine short and long peaks. There doesn't seem to be a way to increment variables from non-UI blocks, or anything that would help to replicate their design. The best thing I can think of is creating a custom peak count to magnitude block that outputs the number of consecutive peak samples as an amplitude.
+I first found [[this article|http://www.ni.com/example/13192/en/]], which doesn't have references to GNU radio, but provided details for me to create my own custom blocks if needed. I tried implementing the &quot;rising edge detection&quot; with Gnu Radio's &quot;Peak Detector&quot; but I was stumped after that for manually counting how many samples were in the peak to determine short and long peaks. There doesn't seem to be a way to increment variables from non-UI blocks, or anything that would help to replicate their design. The best thing I can think of is creating a custom peak count to magnitude block that outputs the number of consecutive peak samples as an amplitude. I've broken this off to [[another project|http://notebook.crimsonagents.com/#GNU%20Radio%20Blocks]]
 
 The section &quot;Counting the Bits&quot; from [[this article from Inguardians|http://www.inguardians.com/pubs/GRC_signal_analysis_InGuardians_v1.pdf]] explains how to use the &quot;Clock Recovery MM&quot; and the &quot;Bit Slicer&quot;. If this works out, this may replace my need to create custom blocks. Though the custom block maybe useful in future reverse engineering.
 
