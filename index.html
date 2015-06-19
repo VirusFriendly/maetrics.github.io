@@ -6070,7 +6070,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Raytheon Card]] [[Where to Start?]] [[Currently Studying]] [[Current Projects]] [[Analysis of CHS 435HDC]] About" title="$:/StoryList">
+<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6467,7 +6467,7 @@ python vol.py hashdump -f ~/memory.dmp --profile=&lt;OS Profile&gt; --sys-offset
 
 http://www.kb6nu.com/study-guides/</pre>
 </div>
-<div created="20150529032039549" modified="20150605052442405" tags="projects" title="Analysis of CHS 435HDC">
+<div created="20150529032039549" modified="20150619211947026" tags="projects" title="Analysis of CHS 435HDC">
 <pre>''goal:'' This is along the lines of hack yourself (or hack what you have).
 
 I have a Set Top Box (STB), so lets explore the attack surfaces and see if we can find miss-configurations or vulnerabilities.
@@ -6527,7 +6527,16 @@ Currently attempting a bruteforce on the community string
 
 * This appears to be a logging port that accepts commands with 2 arguments.
 
-* [[pronto's observations|https://twitter.com/moo_pronto/status/605908012964839424]]</pre>
+* [[pronto's observations|https://twitter.com/moo_pronto/status/605908012964839424]]
+
+----
+
+While soliciting advice on finding the SNMP community string, several people suggested that I capture the traffic going to the device. While it would be easy to sniff the connection to the STB, I'm curious about traffic going to the router as well. However, I'm not familiar with ~MoCA or how to sniff the coax cable.
+
+With some research, I found ways to convert my fios router into a bridge. This allows me to basically convert the coax into twisted pair and add a tap and another router to provide nat and firewall functionality. In the future I'll look into setting up an ~OpenWRT system.
+
+* [[Making an FIOs ActionTec MI424-WR a Network Bridge|http://www.hanselman.com/blog/SimplifyingYourNetworkWithABridgeMakingAnFIOsActionTecMI424WRANetworkBridge.aspx]]
+* [[Configure MI424WR as a LAN MoCA Bridge|http://support.actiontec.com/doc_files/Configure_MI424WR_as_a_LAN_MoCA_Bridge.pdf]]</pre>
 </div>
 <div created="20150529013508133" modified="20150529013605057" tags="[[Fault Injection]]" title="Android Manifest.xml">
 <pre>Examine the Manifest.xml for Activities, Services, and Receivers. These can then be launched directly
@@ -8041,7 +8050,7 @@ http://en.wikipedia.org/wiki/Heartbleed</pre>
 * &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20150528230844658" modified="20150529015412014" tags="study [[Reverse Engineer]]" title="Reverse Engineering with Radare2">
+<div created="20150528230844658" modified="20150619213401296" tags="study [[Reverse Engineer]]" title="Reverse Engineering with Radare2">
 <pre>''Goal:'' The free version of IDApro does not handle (among other things) 64bit programs. Looking into using Radare2 to fill this space cheaply. It can also replace Immunity Debugger with it scripting and debugging features and being cross-platform via remote servers. Additionally, a cross-platform scriptable debugger makes it possible to implement advanced fuzzing techniques described in [[High Performance Fuzzing|https://www.youtube.com/watch?v=Di74wGAHysA]].
 
 [[Reverse engineering embedded software using Radare2|https://www.youtube.com/watch?v=R3sGlzXfEkU]]
@@ -8070,7 +8079,14 @@ To get an IDApro like function graph...
 radare2 -nq -c 'aa ; ag main &gt; main.dot' &lt;target_binary&gt;; xdot main.dot
 ```
 
-Todo: How to patch binaries</pre>
+Todo: How to patch binaries
+
+----
+
+Beyond learning 64bit reverse engineering, I also want to increase my reverse engineering skills in windows. [[Reverse Engineering Windows AFD.sys|https://www.youtube.com/watch?v=gaOiAKByOOQ]] is a good video on exploring Windows drivers. Two things that jumped out at me were ~DbgPrint and ETW.
+
+* [[Getting DbgPrint Output To Appear In Vista and Later|https://www.osronline.com/article.cfm?article=295]]
+* [[Event Tracing For Windows – what it is and useful tools|http://blogs.msdn.com/b/oanapl/archive/2009/08/05/etw-event-tracing-for-windows-what-it-is-and-useful-tools.aspx]]</pre>
 </div>
 <div created="20150507230249043" modified="20150507231947981" tags="Reference" title="SANS Cheat Sheets">
 <pre>* [[SIFT|http://digital-forensics.sans.org/media/sift_cheat_sheet.pdf]]
