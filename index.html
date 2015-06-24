@@ -6048,10 +6048,10 @@ Error message and password prompt
 <div modified="20150529023952840" title="$:/state/plugin-info--896887961-$:/core">
 <pre>no</pre>
 </div>
-<div modified="20150604205813071" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div modified="20150624104019375" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
-<div modified="20150603004349999" title="$:/state/sidebar">
+<div modified="20150624113318806" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div modified="20150603035906475" title="$:/state/tab--1963855381">
@@ -6314,8 +6314,8 @@ At this point it is largely for experimentation by @zooko.
 <div created="20150529024008477" modified="20150529024014179" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20150529023901040" modified="20150623173137933" title="$:/temp/search">
-<pre>pdf</pre>
+<div created="20150529023901040" modified="20150624113321779" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20150529024005439" modified="20150529024005439" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://tiddlywiki.com/library/v5.1.8/index.html" url="http://tiddlywiki.com/library/v5.1.8/index.html">
 <pre>loaded</pre>
@@ -7319,7 +7319,7 @@ Because of the way a PE’s import table is generated (and therefore how its imp
 Consider a scenario where an attacker compiles 30 variants of its backdoor with different C2 locations and campaign IDs and deploys them to various companies. If a blog post comes out stating that a specific MD5 was identified as part of a campaign, then based on that MD5 the attacker immediately knows what infrastructure (such as C2 domains or associated IP addresses) is at stake and which campaign may be in jeopardy. However, if the malware was identified just by its imphash value, it is possible that the imphash is shared across all 30 of the attacker’s variants. The malware is still identifiable by and can be discussed within the security community, but the attacker doesn’t know which specific samples have been identified or which parts of their infrastructure are in jeopardy
 &lt;&lt;&lt; [[source|https://www.mandiant.com/blog/tracking-malware-import-hashing/]]</pre>
 </div>
-<div created="20150623171128163" modified="20150623172942953" tags="projects" title="Installing NetHunter on a Galaxy S4">
+<div created="20150623171128163" modified="20150624112736704" tags="projects" title="Installing NetHunter on a Galaxy S4">
 <pre>Github shows (experimental) support for S4
 
 [[https://github.com/offensive-security/kali-nethunter/blob/master/androidmenu.sh]]
@@ -7337,7 +7337,35 @@ and it will run and export the kernel for nethunter to the nethunter directory l
 ./androidmenu.sh rootfs ~/NetHunter
 
 to build the NetHunter package. To install, install the NetHunter zip first, then install the S4 or S5 kernel. Order is important!
-&lt;&lt;&lt; https://forums.kali.org/archive/index.php/t-23264.html</pre>
+&lt;&lt;&lt; https://forums.kali.org/archive/index.php/t-23264.html
+
+----
+
+The besides not supporting Samsung the installation from linux guide is either incomplete or outdated. This covers the steps I took.
+
+[[Update to 4.4.4|https://support.t-mobile.com/docs/DOC-5887]] settings-&gt;more-&gt;about device-&gt;Software Update
+
+Attempts to unlock the phone haven't been successful. I have T-Mobile and the *#27663368378# or *#0011# tricks aren't working. Going to try odin next.
+
+```
+apt-get update &amp;&amp; apt-get -y install google-nexus-tools
+```
+
+best to do this all as root
+
+```
+mkdir ~/arm-stuff
+cd ~/arm-stuff
+git clone https://github.com/offensive-security/gcc-arm-linux-gnueabihf-4.7
+export PATH=${PATH}:/root/arm-stuff/gcc-arm-linux-gnueabihf-4.7/bin
+git clone https://github.com/offensive-security/kali-nethunter
+cd ~/arm-stuff/kali-nethunter
+./build-deps.sh
+./androidmenu.sh
+```
+
+when it asks `Enter version number:` This can be any number, its just to help you have different folders for different builds, so start with 1, then increment on subsequent builds.
+</pre>
 </div>
 <div created="20150507041404823" modified="20150525155042571" tags="Methodology" title="Intrusion Kill Chain">
 <pre>A methodology defined by [[Lockheed|http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf]]).
