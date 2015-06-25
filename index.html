@@ -6072,7 +6072,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] About" title="$:/StoryList">
+<div list="" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8006,7 +8006,7 @@ Additionally the free version of IDApro doesn't support x64 architecture. ODA do
 <div created="20150529014821983" modified="20150529015011126" tags="projects" title="Radare2-based Fuzzer">
 <pre>[[In memory fuzzing in linux with gdb and python|https://web.archive.org/web/20131108033609/http://securityadventures.wordpress.com/2011/10/17/in-memory-fuzzing-in-linux-with-gdb-and-python/]]</pre>
 </div>
-<div created="20150615220108031" modified="20150625153234646" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
+<div created="20150615220108031" modified="20150625165953897" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
 <pre>[[Patch Brewsday|http://jailbreakbrewing.com/event/patch-brewsday/]] is a monthly event at JailBreak Brewery that's hosted by Raytheon. Among the many interesting challenges is their business card and UV light set.
 
 The card is heavily marked in binary and hexadecimal with little readable text.
@@ -8181,7 +8181,19 @@ The phone number contact is a Google Voice number. Couldn't find any advertiseme
 ---
 Curious to why the UV ink was referred to as 365nm and 460nm, I came across this [[video|https://www.youtube.com/watch?v=vl3y72VFrsU]]. Based on this, I'm guessing that the led device given along with the card is actually 385nm.
 
-This [[link|http://www.riskreactor.com/blacklight-and-uv-leds/]] gives more insight into UV activated dyes. The dye used on this card is green.</pre>
+This [[link|http://www.riskreactor.com/blacklight-and-uv-leds/]] gives more insight into UV activated dyes. The dye used on this card is green.
+
+---
+Solved the UV challenge of Card 1 by brute-forcing the key (very small keyspace). The answer returned is an email with a good domain name (not named here to prevent spoilers), but the username is &quot;lcgpuzyle&quot;.
+
+As the username looked odd (high entropy), I tested the address by sending an email which was bounced back, thus confirming my suspicion.
+
+I then googled the email domain in search for 9 letter usernames that might be the plaintext or unjumble of this email and found
+
+* personnel (less entropy)
+* swilliams (less entropy)
+
+possibly more information can be learned from the other UV challenge, or the green text.</pre>
 </div>
 <div created="20150529125941855" modified="20150529231623499" tags="projects" title="Recon-NG Modules">
 <pre>''repository'': https://github.com/maetrics/recon-scripts
