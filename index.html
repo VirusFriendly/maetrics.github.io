@@ -8006,7 +8006,7 @@ Additionally the free version of IDApro doesn't support x64 architecture. ODA do
 <div created="20150529014821983" modified="20150529015011126" tags="projects" title="Radare2-based Fuzzer">
 <pre>[[In memory fuzzing in linux with gdb and python|https://web.archive.org/web/20131108033609/http://securityadventures.wordpress.com/2011/10/17/in-memory-fuzzing-in-linux-with-gdb-and-python/]]</pre>
 </div>
-<div created="20150615220108031" modified="20150625140437569" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
+<div created="20150615220108031" modified="20150625153234646" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
 <pre>[[Patch Brewsday|http://jailbreakbrewing.com/event/patch-brewsday/]] is a monthly event at JailBreak Brewery that's hosted by Raytheon. Among the many interesting challenges is their business card and UV light set.
 
 The card is heavily marked in binary and hexadecimal with little readable text.
@@ -8080,6 +8080,8 @@ The &quot;4.5 ways&quot; is an interesting bit. I presume the plain text url is 
 
 The card refers to this as 365nm, while an //interesting// contact refers to it as 460nm. Two different card layouts had different puzzles written in UV activated ink.
 
+While the cards are interesting to look at, it was the two different UV puzzles that prompted me to actually solve the challenges, as these cards are now both a cryptopuzzle and a &quot;collectible&quot;. 
+
 !! Card 1 
 
 ```
@@ -8119,7 +8121,7 @@ F4
 
 Some of the hexadecimal in the first blob on the back of the card are written in green while the rest are written in red.
 
-Again this is different for different cards.
+Again this is different for different cards. As the cards had different markings, I initially assumed that this was merely an aesthetic design. After only getting 3 of the 4.5 contacts prior to solving the UV puzzles, I realized this might represent a .5 contact? What is a .5 contact??
 
 !! Card 1
 
@@ -8135,6 +8137,19 @@ Just the green hexadecimal
 7EF02D645C24965C3072F0561629
 ```
 
+!! Card 2
+
+Hexadecimal pairs with at least one character printed in green and doubled if both characters are printed in green.
+
+```
+20 68 6B 4F 74 6F 20 6D 20 6F 6C 61 6C 6C 61 6C 74 20 20 61 69 6E 57 68 61 65 74 20
+```
+
+Just the green hexadecimal
+
+```
+26BF7F0D2F61CC1C42069E86540
+```
 ---
 I Googled various numeric strings to see if anyone else had publicly solved this card, but only &quot;3ECC8A9D 586E011D 7F030A4C&quot; returned any hits.
 
@@ -8161,7 +8176,12 @@ The second small blob of hex on the back easily converts to ascii and is not a c
 The phone number contact is a Google Voice number. Couldn't find any advertisement of the number on the web.
 
 ---
-&quot;Searching&quot; the //interesting// contact, and you can find out about a USB puzzle  that has all kinds of fun in the firmware and media.</pre>
+&quot;Searching&quot; the //interesting// contact, and you can find out about a USB puzzle  that has all kinds of fun in the firmware and media.
+
+---
+Curious to why the UV ink was referred to as 365nm and 460nm, I came across this [[video|https://www.youtube.com/watch?v=vl3y72VFrsU]]. Based on this, I'm guessing that the led device given along with the card is actually 385nm.
+
+This [[link|http://www.riskreactor.com/blacklight-and-uv-leds/]] gives more insight into UV activated dyes. The dye used on this card is green.</pre>
 </div>
 <div created="20150529125941855" modified="20150529231623499" tags="projects" title="Recon-NG Modules">
 <pre>''repository'': https://github.com/maetrics/recon-scripts
