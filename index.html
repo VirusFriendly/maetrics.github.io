@@ -6662,7 +6662,7 @@ A class of LE devices that brodcast their location are call iBeacons, as iApple 
 * ff02::c.3702 WS-Discovery
 * ff02::fb.5353 MulticastDNS</pre>
 </div>
-<div created="20150630193047716" modified="20150630193902618" tags="" title="Bypassing SSL decryptors">
+<div created="20150630193047716" modified="20150630195919820" tags="" title="Bypassing SSL decryptors">
 <pre>&lt;&lt;&lt;
 Policy processing first detects whether or not traffic contains SSL/TLS. If another protocol (like HTTP) is detected, the module can use this information to infer that the flow does not contain SSL/TLS. For other protocols, the module examines the first four kilobytes of payload data in the flow, and if SSL/TLS does not start within this window, the flow is deemed not to contain SSL/TLS traffic.
 &lt;&lt;&lt; Sourcefire SSL Appliance Administration and deployment guide
@@ -6676,7 +6676,7 @@ SSL sessions using unsupported cipher suites appear in the SSL session log with 
 
 &lt;&lt;&lt; Sourcefire SSL Appliance Administration and deployment guide
 
-|!Cipher Suite Definition|
+|!Supported Cipher Suites|
 |NULL_WITH_NULL_NULL|
 |RSA_WITH_NULL_MD5|
 |RSA_WITH_NULL_SHA|
@@ -8479,9 +8479,14 @@ http://www.experts-exchange.com/articles/2155/Keyboard-Remapping-CAPSLOCK-to-Ctr
 * OWASP ZAP (Java)
 * Wireshark (Lua)</pre>
 </div>
-<div created="20150530154518134" modified="20150609192041518" tags="projects" title="Toyota Keyless Entry Remote Analysis">
-<pre>! Initial Recon
+<div created="20150530154518134" modified="20150630202138694" tags="projects" title="Toyota Keyless Entry Remote Analysis">
+<pre>! Goal
+
+Gain experience using ~GnuRadio and analyzing proprietary digital communications. I'm not looking for vulnerabilities at this time.
+
 ---
+
+! Initial Recon
 
 |FCC ID|HYQ12BBY|
 |FREQUENCY|315 MHz|
@@ -8500,16 +8505,15 @@ Based on these identifiers, I'm guessing there are 12 types of codes...which see
 
 Based on [[FCC ID search||https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=7g2j1WGQrnWaWRD94FMNxA%3D%3D&amp;fcc_id=HYQ12BBY]] Frequency: 314.35 mhz
 
-
-! Initial Survey
 ---
+! Initial Survey
 
 First attempt to find signal after pressing the lock, unlock, lock buttons.
 
 [img[keylessentry.png]]
 
-! Additional Research
 ---
+! Additional Research
 
 I continued researching, perhaps the initial site had the wrong information.
 
@@ -8523,8 +8527,8 @@ It could very well be that my radio is off, I'll look into verifying that later.
 
 [img[keylessentry2.png]]
 
-! Signal Analysis
 ---
+! Signal Analysis
 
 I found the frequency, now what? See what other people do.
 
@@ -8537,9 +8541,8 @@ Analyzing the magnitude reveals the OOK nature of the signal
 
 [img[keylessentry11.png]]
 
-
-! Decode Signal
 ---
+! Decode Signal
 
 Next plan is to create an OOK demodulator mainly to get more familiar with GNUradio
 
@@ -8563,13 +8566,21 @@ I first found [[this article|http://www.ni.com/example/13192/en/]], which doesn'
 
 The section &quot;Counting the Bits&quot; from [[this article from Inguardians|http://www.inguardians.com/pubs/GRC_signal_analysis_InGuardians_v1.pdf]] explains how to use the &quot;Clock Recovery MM&quot; and the &quot;Bit Slicer&quot;. If this works out, this may replace my need to create custom blocks. Though the custom block maybe useful in future reverse engineering.
 
-! Related References
 ---
+! Additional Keyfobs
+
+I rented a car over the weekend and discovered that this is a great source of keyless fobs to observe. Sadly I was camping this weekend and didn't have a lot of time to observe the transmission.
+
+FCCID: [[OSLOKA-950T|https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=8Mu7c4lwhpOpEIDly8U1wQ%3D%3D&amp;fcc_id=OSLOKA-950T]]
+
+---
+! Related References
+
 * http://samy.pl/opensesame/
 * https://twitter.com/Killswitch_GUI/status/606494068286160896/photo/1
 
-! Acknowledgements
 ---
+! Acknowledgements
 
 Special thanks to Corey for pointing me to very useful references</pre>
 </div>
