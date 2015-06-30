@@ -6072,7 +6072,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="" title="$:/StoryList">
+<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8006,7 +8006,7 @@ Additionally the free version of IDApro doesn't support x64 architecture. ODA do
 <div created="20150529014821983" modified="20150529015011126" tags="projects" title="Radare2-based Fuzzer">
 <pre>[[In memory fuzzing in linux with gdb and python|https://web.archive.org/web/20131108033609/http://securityadventures.wordpress.com/2011/10/17/in-memory-fuzzing-in-linux-with-gdb-and-python/]]</pre>
 </div>
-<div created="20150615220108031" modified="20150625165953897" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
+<div created="20150615220108031" modified="20150630141415207" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
 <pre>[[Patch Brewsday|http://jailbreakbrewing.com/event/patch-brewsday/]] is a monthly event at JailBreak Brewery that's hosted by Raytheon. Among the many interesting challenges is their business card and UV light set.
 
 The card is heavily marked in binary and hexadecimal with little readable text.
@@ -8193,7 +8193,20 @@ I then googled the email domain in search for 9 letter usernames that might be t
 * personnel (less entropy)
 * swilliams (less entropy)
 
-possibly more information can be learned from the other UV challenge, or the green text.</pre>
+possibly more information can be learned from the other UV challenge, or the green text.
+
+---
+UV challenge of Card 2 appears to be a simple xor cipher block chaining with an unknown initialization vector.
+
+```
+c1 = (iv^p1)
+c2 = (iv^p1)^p2
+c3 = (iv^p1^p2)^p3
+```
+
+Since there isn't additional crypto involved, I should be able to rewind the chaining and get some plain text by xoring c2 with either c1 (to get p2) or c3 (to get p3), and then work on decoupling p1 and the initialization vector.
+
+However, I'm not seeing recognizable plaintext after performing such calculations. Perhaps there's something I'm overlooking.</pre>
 </div>
 <div created="20150529125941855" modified="20150529231623499" tags="projects" title="Recon-NG Modules">
 <pre>''repository'': https://github.com/maetrics/recon-scripts
