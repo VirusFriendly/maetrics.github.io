@@ -289,6 +289,8 @@ Error message and password prompt
 
 <li>Broadcast Domain Sniffing</li>
 
+<li>Bypassing SSL decryptors</li>
+
 <li>Cipher Analysis Tools</li>
 
 <li>Citrix</li>
@@ -6066,8 +6068,8 @@ Error message and password prompt
 <div modified="20150603040030871" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div modified="20150615212039759" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div modified="20150630193919013" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
@@ -6659,6 +6661,43 @@ A class of LE devices that brodcast their location are call iBeacons, as iApple 
 * ff02::c.1900 UPnP
 * ff02::c.3702 WS-Discovery
 * ff02::fb.5353 MulticastDNS</pre>
+</div>
+<div created="20150630193047716" modified="20150630193902618" tags="" title="Bypassing SSL decryptors">
+<pre>&lt;&lt;&lt;
+Policy processing first detects whether or not traffic contains SSL/TLS. If another protocol (like HTTP) is detected, the module can use this information to infer that the flow does not contain SSL/TLS. For other protocols, the module examines the first four kilobytes of payload data in the flow, and if SSL/TLS does not start within this window, the flow is deemed not to contain SSL/TLS traffic.
+&lt;&lt;&lt; Sourcefire SSL Appliance Administration and deployment guide
+
+---
+
+&lt;&lt;&lt;
+There is no support for the outdated export version of the cipher suites. There is also no  support for SHA256 MAC, static DH (Diffie-Hellman) key exchange, DSS (Digital Signature Standard) authentication, or ECC (Elliptic Curve) key exchange.
+
+SSL sessions using unsupported cipher suites appear in the SSL session log with an &quot;Undecryptable&quot; event value. The action taken depends on policy option and is either “Cut through”, “Drop” or “Reject”.
+
+&lt;&lt;&lt; Sourcefire SSL Appliance Administration and deployment guide
+
+|!Cipher Suite Definition|
+|NULL_WITH_NULL_NULL|
+|RSA_WITH_NULL_MD5|
+|RSA_WITH_NULL_SHA|
+|RSA_WITH_RC4_128_MD5|
+|RSA_WITH_RC4_128_SHA|
+|RSA_WITH_3DES_EDE_CBC_SHA|
+|RSA_WITH_AES_128_CBC_SHA|
+|RSA_WITH_AES_256_CBC_SHA|
+|DHE_DSS_WITH_3DES_EDE_CBC_SHA|
+|DHE_RSA_WITH_3DES_EDE_CBC_SHA|
+|DH_anon_WITH_3DES_EDE_CBC_SHA|
+|DHE_RSA_WITH_AES_128_CBC_SHA|
+|DH_anon_WITH_AES_128_CBC_SHA|
+|DHE_RSA_WITH_AES_256_CBC_SHA|
+|DH_anon_WITH_AES_256_CBC_SHA|
+|RSA_CAMELLIA_128_CBC|
+|DHE_RSA_CAMELLIA_128_CBC|
+|DH_anon_CAMELLIA_128_CBC|
+|RSA_CAMELLIA_256_CBC|
+|DHE_RSA_CAMELLIA_256_CBC|
+|DH_anon_CAMELLIA_256_CBC|</pre>
 </div>
 <div created="20150529031739849" modified="20150529032010872" tags="projects" title="Cipher Analysis Tools">
 <pre>Personally, I hate all the cipher problems included in CTF challenges, but they're there so if I can automate cracking them then all the better.
