@@ -6316,8 +6316,8 @@ At this point it is largely for experimentation by @zooko.
 <div created="20150529024008477" modified="20150529024014179" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20150529023901040" modified="20150709032833691" title="$:/temp/search">
-<pre>mala</pre>
+<div created="20150529023901040" modified="20150719163848889" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20150529024005439" modified="20150529024005439" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://tiddlywiki.com/library/v5.1.8/index.html" url="http://tiddlywiki.com/library/v5.1.8/index.html">
 <pre>loaded</pre>
@@ -6471,7 +6471,7 @@ python vol.py hashdump -f ~/memory.dmp --profile=&lt;OS Profile&gt; --sys-offset
 
 http://www.kb6nu.com/study-guides/</pre>
 </div>
-<div created="20150529032039549" modified="20150619211947026" tags="projects" title="Analysis of CHS 435HDC">
+<div created="20150529032039549" modified="20150720021304335" tags="projects" title="Analysis of CHS 435HDC">
 <pre>''goal:'' This is along the lines of hack yourself (or hack what you have).
 
 I have a Set Top Box (STB), so lets explore the attack surfaces and see if we can find miss-configurations or vulnerabilities.
@@ -6498,21 +6498,25 @@ Research into similar devices
 * [[Remote manager via Android|https://play.google.com/store/apps/details?id=com.verizon.fiosmobile&amp;hl=en%3Futm_source%3Dna_Med]]
 * [[Remote manager via website|http://m.verizon.com/tv]] (app, and phone probably both send to website which then manages DVR)
 
-Network Ports: 
+Network Ports/protocols: 
 
-* 68/udp dhcpc
-* 161/udp snmp
-* 1900/udp upnp
-* 7547/tcp  no fingerprint
-* 7612/tcp  no fingerprint
-* 7911/tcp  omapi  ISC (BIND|DHCPD) OMAPI
-* 8000/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp8000.sf]]
-* 9666/tcp  no fingerprint
-* 9999/tcp [[nmap fingerprint|https://github.com/maetrics/nmap-scripts/blob/master/sf-signatures/tcp9999.sf]] Cisco DLNA ~UPnP port
-* 18753/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp18753.sf]]
-* 18863/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp18863.sf]]
-* 63100/tcp [[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp63100.sf]] Logging port
-* 63147/tcp no fingerprint
+|!Port/Protocol|!Service|!Discovered|
+|68/udp|dhcpc|Nmap|
+|80/tcp|web api|Connection log|
+|161/udp|snmp|Nmap|
+|1900/udp|upnp|Nmap|
+|6794/tcp|unknown|Connection log|
+|7547/tcp|no fingerprint|Nmap|
+|7612/tcp |no fingerprint|Nmap|
+|7911/tcp|omapi  ISC (BIND DHCPD) OMAPI|Nmap|
+|8000/tcp|[[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp8000.sf]]|Nmap|
+|9666/tcp|no fingerprint|Nmap|
+|9999/tcp|[[nmap fingerprint|https://github.com/maetrics/nmap-scripts/blob/master/sf-signatures/tcp9999.sf]] Cisco DLNA ~UPnP port|Nmap|
+|10101/udp|unknown|Connection log|
+|18753/tcp|[[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp18753.sf]]|Nmap|
+|18863/tcp|[[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp18863.sf]]|Nmap|
+|63100/tcp|[[nmap fingerprint|https://raw.githubusercontent.com/maetrics/nmap-scripts/master/sf-signatures/tcp63100.sf]]Logging port|Nmap|
+|63147/tcp|no fingerprint|Nmap|
 
 ! SNMP 161/udp
 
@@ -6540,7 +6544,29 @@ While soliciting advice on finding the SNMP community string, several people sug
 With some research, I found ways to convert my fios router into a bridge. This allows me to basically convert the coax into twisted pair and add a tap and another router to provide nat and firewall functionality. In the future I'll look into setting up an ~OpenWRT system.
 
 * [[Making an FIOs ActionTec MI424-WR a Network Bridge|http://www.hanselman.com/blog/SimplifyingYourNetworkWithABridgeMakingAnFIOsActionTecMI424WRANetworkBridge.aspx]]
-* [[Configure MI424WR as a LAN MoCA Bridge|http://support.actiontec.com/doc_files/Configure_MI424WR_as_a_LAN_MoCA_Bridge.pdf]]</pre>
+* [[Configure MI424WR as a LAN MoCA Bridge|http://support.actiontec.com/doc_files/Configure_MI424WR_as_a_LAN_MoCA_Bridge.pdf]]
+
+---
+
+Poking around the FIOS actiontec router, I discovered the two port forwarding rules and no open inbound firewall rules.
+
+|!Original|!Translated|
+|63145/udp|63145/udp|
+|7547/tcp|35000/tcp|
+
+These ports/protocols were already known, but the translation is interesting
+
+---
+
+Analyzing the connection logs through the Actiontec router I've discovered the following outbound connections.
+
+|!Destination Port | !Destination Host|
+|80/tcp|3 Verizon hosts|
+|1900/udp|239.255.255.250|
+|10101/udp|1 Verizon host|
+|6794/tcp|1 Verizon host|
+
+More ports/protocols for me to investigate. I'm uneasy knowing that the Actiontec router allows SSDP packets out. I will have to setup a listener in the future to see if I can collect any details from other fios installations.</pre>
 </div>
 <div created="20150529013508133" modified="20150529013605057" tags="[[Fault Injection]]" title="Android Manifest.xml">
 <pre>Examine the Manifest.xml for Activities, Services, and Receivers. These can then be launched directly
