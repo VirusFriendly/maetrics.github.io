@@ -275,8 +275,6 @@ Error message and password prompt
 
 <li>Acquiring NT Hashes from Memory</li>
 
-<li>Amateur Radio License</li>
-
 <li>Analysis of CHS 435HDC</li>
 
 <li>Android Manifest.xml</li>
@@ -284,8 +282,6 @@ Error message and password prompt
 <li>Automated Wifi Hacking Training Course</li>
 
 <li>Backdooring Extended Keyboards</li>
-
-<li>Bluetooth 4.0 (Smart)</li>
 
 <li>Broadcast Domain Sniffing</li>
 
@@ -298,6 +294,8 @@ Error message and password prompt
 <li>Cookie Analysis</li>
 
 <li>Creating word lists with jtr</li>
+
+<li>Crypto's Zigbee talk</li>
 
 <li>CTF Bot</li>
 
@@ -439,7 +437,7 @@ Error message and password prompt
 
 <li>Radare2-based Fuzzer</li>
 
-<li>Raytheon SI Business Card (Cryptopuzzle)</li>
+<li>Radio and Wireless</li>
 
 <li>Recon-NG Modules</li>
 
@@ -479,8 +477,6 @@ Error message and password prompt
 
 <li>Where to Start?</li>
 
-<li>Wifi-Direct</li>
-
 <li>Wireshark Modules</li>
 
 <li>WPAD</li>
@@ -490,8 +486,6 @@ Error message and password prompt
 <li>XSS Testing Methodology</li>
 
 <li>ZAP Modules</li>
-
-<li>Zigbee</li>
 
 </ul>
 </p>
@@ -6074,7 +6068,7 @@ Error message and password prompt
 <div modified="20150603035856518" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Where to Start?]] [[Currently Studying]] [[Current Projects]] About" title="$:/StoryList">
+<div list="[[Where to Start?]] [[Currently Studying]] [[Radio and Wireless]] [[Current Projects]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6091,7 +6085,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20150529025523778" modified="20150623173438991" title="$:/temp/NewTagName">
+<div created="20150529025523778" modified="20150904212328184" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Zdeněk Jašek" core-version="&gt;=5.0.0" created="20150529024005517" dependents="" description="Česky (Czech Republic)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%22600%22%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22600%22%20fill%3D%22%23d7141a%22%2F%3E%0A%09%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23fff%22%2F%3E%0A%09%3Cpath%20d%3D%22M%20450%2C300%200%2C0%20V%20600%20z%22%20fill%3D%22%2311457e%22%2F%3E%0A%3C%2Fsvg%3E%0A" modified="20150529024005517" name="cs-CZ" original-plugin-type="language" original-tags="" original-title="$:/languages/cs-CZ" original-type="application/json" server-url="http://tiddlywiki.com/library/v5.1.8/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/http://tiddlywiki.com/library/v5.1.8/index.html/$:/languages/cs-CZ" type="text/vnd.tiddlywiki" version="5.1.8">
@@ -6466,11 +6460,6 @@ python vol.py hashdump -f ~/memory.dmp --profile=&lt;OS Profile&gt; --sys-offset
 
 [[source|http://pen-testing.sans.org/blog/2012/08/03/pen-test-privilege-escalation-through-suspended-virtual-machines]]</pre>
 </div>
-<div created="20150606041904470" modified="20150606042637232" tags="study" title="Amateur Radio License">
-<pre>I'm not looking to become a ham, but to for sdr projects that require transmission
-
-http://www.kb6nu.com/study-guides/</pre>
-</div>
 <div created="20150529032039549" modified="20150720021304335" tags="projects" title="Analysis of CHS 435HDC">
 <pre>''goal:'' This is along the lines of hack yourself (or hack what you have).
 
@@ -6621,33 +6610,6 @@ Windows Registry Editor Version 5.00
 &quot;ShellExecute&quot;=&quot;backdoor.exe Association http&quot;
 ```</pre>
 </div>
-<div created="20150528222049867" modified="20150604153327752" tags="study" title="Bluetooth 4.0 (Smart)">
-<pre>''Goal:'' Detect, parse traffic, and communicate
-
-Bluetooth 4.0 consists of Classic Bluetooth (legacy Bluetooth), High speed (from Bluetooth 3.0), Low Energy (Wibree)
-
-
-! Bluetooth +HS
-Competing against [[Wifi-Direct]], bluetooth devices will use 802.11 to transmit data at faster speeds.
-
-! Bluetooth LE
-
-* [[Cisco's Networking 101 video about Bluetooth LE|https://www.youtube.com/watch?v=Wo2WmJFgf8g]]
-* [[The NSA Playset Bluetooth Smart Attack Tools|https://www.youtube.com/watch?v=_Z4gYyrKVFM]]
-* [[Bluetooth Smart: The Good, The Bad, The Ugly, and The Fix!|https://www.youtube.com/watch?v=A-kJ3AXp9cI]]
-* [[Running BLE scans in Kali|https://twitter.com/WebBreacher/status/603531851924406272]]
-* [[Running BLE scans on Raspberry Pi|http://www.elinux.org/RPi_Bluetooth_LE]]
-
-A class of LE devices that brodcast their location are call iBeacons, as iApple came up with the protocol.
-
-* [[iBeacon Protocol|http://en.wikipedia.org/wiki/IBeacon]]
-
-
-! Lab
-
-*[[Bluepot - A Bluetooth Honeypot written in Java|https://github.com/andrewmichaelsmith/bluepot]] (legacy)
-*[[RaMBLE - Android Bluetooth Scanner|https://play.google.com/store/apps/details?id=com.contextis.android.BLEScanner]] (LE)</pre>
-</div>
 <div created="20150507223916836" modified="20150507224453905" tags="Footprint" title="Broadcast Domain Sniffing">
 <pre>Recon Traffic a system sniff without needing to arpspoof or MitM
 
@@ -6795,6 +6757,60 @@ Generating every permutation
 ```
 john --incremental --stdout
 ```</pre>
+</div>
+<div created="20150924193708505" modified="20150924195714452" title="Crypto's Zigbee talk">
+<pre>! General notes
+xbee is not real zigbee, doesn’t use IEEE radio protocol
+
+Recommended book: [[Zigbee Wireless Networks and Transceivers (Shahin Farahani PhD)|http://www.amazon.com/ZigBee-Wireless-Networks-Transceivers-Farahani/dp/0750683937]]
+
+!! Frequency Ranges
+
+* 780 mhz (China band)
+* 868 mhz
+* 915 mhz
+* 2.4 ghz
+
+! Zigbee Equipment
+!! Expensive option for protocol capture
+[[Sewio|http://www.sewio.net/portfolio_category/zigbee/]] ($405). No injection, only sniffing.
+
+
+!! Cheap/slow/hackish for protocol capture &amp; attacks
+* Atmel AVR Raven ($40) flashed with Killer Bee (jtag).
+* Atmel AVR dragon ($65) (has injection ability)
+
+probably want to get both
+
+!! Other devices
+Smart things hub ($99)
+
+! Encryption
+
+# Zigbee key
+# Network key
+# Link/Session key per device/pan coordinator
+
+(Possible that pan coordinator hands out keys)
+
+! Zigbee Attacks
+
+!! Association Flood (included in Killer Bee)
+* Spoof a lot of devices to crash a pan coordinator
+* Can associate to encrypted networks (network will simpy drop you after a while)
+
+!! Password recovery attack (included in Killer Bee)
+* if the network allows unencrypted devices on, the unencrypted device will devolve the network to release the network password in plaintext
+
+!! Panid Conflict Attack
+* Constantly sending Pan id conflict notification to the pan coordinator will drop off low powered devices
+
+!! Malicious Acknowledgement
+* Spoof acknowledging packets to deteriorate communications to devices 
+
+!! Ghost-in-the-Wireless
+* Something people in Tennessee figured out? :(
+</pre>
 </div>
 <div created="20150529231738975" modified="20150529233051523" tags="projects draft" title="CTF Bot">
 <pre>Collection of ideas for future CTFs which require speed to dominate targets
@@ -8075,207 +8091,63 @@ Additionally the free version of IDApro doesn't support x64 architecture. ODA do
 <div created="20150529014821983" modified="20150529015011126" tags="projects" title="Radare2-based Fuzzer">
 <pre>[[In memory fuzzing in linux with gdb and python|https://web.archive.org/web/20131108033609/http://securityadventures.wordpress.com/2011/10/17/in-memory-fuzzing-in-linux-with-gdb-and-python/]]</pre>
 </div>
-<div created="20150615220108031" modified="20150630141415207" tags="projects" title="Raytheon SI Business Card (Cryptopuzzle)">
-<pre>[[Patch Brewsday|http://jailbreakbrewing.com/event/patch-brewsday/]] is a monthly event at JailBreak Brewery that's hosted by Raytheon. Among the many interesting challenges is their business card and UV light set.
+<div created="20150904205756737" modified="20150924195824955" tags="study" title="Radio and Wireless">
+<pre>Preparing for Wireless CTF's
 
-The card is heavily marked in binary and hexadecimal with little readable text.
+! Amateur Radio License
 
-Front Text
+I'm not looking to become a ham, but to for sdr projects that require transmission
 
-&lt;&lt;&lt;
-Raytheon SI
+http://www.kb6nu.com/study-guides/
 
-Challenging Work
-Cool Toys
-Smart Coworkers
+! Bluetooth
 
-http://join.raytheon.si/
-&lt;&lt;&lt;
+Bluetooth 4.0 consists of Classic Bluetooth (legacy Bluetooth), High speed (from Bluetooth 3.0), Low Energy (Wibree)
 
-Back Text
 
-&lt;&lt;&lt;
-If this sounds like you, we'd like to meet you. There are 4.5 ways to contact us on this card.
-&lt;&lt;&lt;
+!! Bluetooth +HS
+Competing against [[Wifi-Direct]], bluetooth devices will use 802.11 to transmit data at faster speeds.
 
-The &quot;4.5 ways&quot; is an interesting bit. I presume the plain text url is the first method.
+!!! Apple Wireless Direct Link
+I'm assuming that AWDL is based o this technology as it's using mDNS over bluetooth for discovery, then using 802.11 149 5ghz channel for transfers
 
-! Front 
+!! Bluetooth LE
 
-```
-         01000011 01100001
-         01101100 01101100
-         00111010 00100000
-00110101 00110000 00110001
-00101110 00110011 00110001
-00110011 00110011 00110111
-00101110 00110000 00110001
-```
+* [[Cisco's Networking 101 video about Bluetooth LE|https://www.youtube.com/watch?v=Wo2WmJFgf8g]]
+* [[The NSA Playset Bluetooth Smart Attack Tools|https://www.youtube.com/watch?v=_Z4gYyrKVFM]]
+* [[Bluetooth Smart: The Good, The Bad, The Ugly, and The Fix!|https://www.youtube.com/watch?v=A-kJ3AXp9cI]]
+* [[Running BLE scans in Kali|https://twitter.com/WebBreacher/status/603531851924406272]]
+* [[Running BLE scans on Raspberry Pi|http://www.elinux.org/RPi_Bluetooth_LE]]
 
-! Back
+A class of LE devices that brodcast their location are call iBeacons, as iApple came up with the protocol.
 
-```
-57 61 6E 6E 61 20 68 61 63
-6B 3F 20 41 62 6C 65 20 74
-6F 20 6D 61 6B 65 20 61 20
-73 79 73 74 65 6D 20 72 6F
-6C 6C 20 6F 76 65 72 20 61
-6E 64 20 62 65 67 3F 20 57
-69 6C 6C 69 6E 67 20 61 6E
-64 20 61 62 6C 65 20 74 6F
-20 6D 61 69 6E 74 61 69 6E
-20 61 20 73 65 63 75 72 69
-74 79 20 63 6C 65 61 72 61
-6E 63 65 3F 20 57 65 20 68
-61 76 65 20 70 6F 73 69 74
-69 6F 6E 73 20 69 6E 20 4D
-44 2C 20 46 4C 2C 20 54 58
-2C 20 55 54 2C 2D 61 6E 64
-20 56 41 20 66 6F 72 20 79
-         6F 75 21
-```
+* [[iBeacon Protocol|http://en.wikipedia.org/wiki/IBeacon]]
 
-```
-68 74 74 70 3a 2f 2f 72 61 79 74 68
- 65 6f 6e 2e 73 69 2f 63 61 72 64
-```
+!! Lab
 
-```
-53 65 65 20 6d 6f 72 65 20
-   40 20 33 36 35 6e 6d
-```
+*[[Bluepot - A Bluetooth Honeypot written in Java|https://github.com/andrewmichaelsmith/bluepot]] (legacy)
+*[[RaMBLE - Android Bluetooth Scanner|https://play.google.com/store/apps/details?id=com.contextis.android.BLEScanner]] (LE)
 
-! UV Ink
+! 802.11 (Wifi)
+!! Wifi-Direct
+!!! Multiconnect
+!! S Beam
+Samsung's technology using NFC for discovery and Wifi for transfer
 
-The card refers to this as 365nm, while an //interesting// contact refers to it as 460nm. Two different card layouts had different puzzles written in UV activated ink.
+! 802.15.4
+[[Crypto's Zigbee talk]]
 
-While the cards are interesting to look at, it was the two different UV puzzles that prompted me to actually solve the challenges, as these cards are now both a cryptopuzzle and a &quot;collectible&quot;. 
+!!6LoWPAN
+!! Zigbee
+[[Ember Zigbee Tutorial |https://www.youtube.com/playlist?list=PL24BC4F9A51A9B5B5]]
 
-!! Card 1 
+!!Lab
+* $45 [[dongle|http://www.atmel.com/tools/rzusbstick.aspx#buy]]
+* $55 [[GE - In-Wall Smart Switch|http://www.bestbuy.com/site/ge-in-wall-smart-switch-white/2065113.p?id=1219522639958&amp;skuId=2065113]]
+* $165 [[Kwikset 912 Smartcode Electronic Deadbolt|http://www.amazon.com/Kwikset-SmartCode%C2%AE-Electronic-featuring-SmartKey%C2%AE/dp/B004ECHIYG]]
+* $200 [[Kwikset Kevo Deadbolt|http://www.kwikset.com/kevo/default.aspx#.VVt4D_lVhBc]] deadbolt bluetooth to unlock, but zigbee reports wheither you’re home or not
 
-```
-void encrypt (char* plaintext, uint8_t key)
-{
-    while(*plaintext)
-    {
-        *(plaintext++) ^= (key = (key*13) + 37);
-    }
-}
-
-2BA3 82B6 46c6 C84E BA38 4E57 2C9B FF69 5953 FADB
-```
-
-!! Card 2 (Back of the card is in landscape layout)
-
-```
-E8 00000000
-6A 03
-59
-5E
-51
-83C6 0D
-AD
-93
-AD
-33C3
-50
-E2 F9
-F4
-3ECC8A9D
-586E011D
-7F030A4C
-```
-
-! Green markings
-
-Some of the hexadecimal in the first blob on the back of the card are written in green while the rest are written in red.
-
-Again this is different for different cards. As the cards had different markings, I initially assumed that this was merely an aesthetic design. After only getting 3 of the 4.5 contacts prior to solving the UV puzzles, I realized this might represent a .5 contact? What is a .5 contact??
-
-!! Card 1
-
-Hexadecimal pairs with at least one character printed in green and doubled if both characters are printed in green.
-
-```
-57 6e 3f 20 62 6d 6f 64 65 6c 20 64 69 6e 75 6c 63 20 6f 20 54 61 61 6e 20 79 79
-```
-
-Just the green hexadecimal
-
-```
-7EF02D645C24965C3072F0561629
-```
-
-!! Card 2
-
-Hexadecimal pairs with at least one character printed in green and doubled if both characters are printed in green.
-
-```
-20 68 6B 4F 74 6F 20 6D 20 6F 6C 61 6C 6C 61 6C 74 20 20 61 69 6E 57 68 61 65 74 20
-```
-
-Just the green hexadecimal
-
-```
-26BF7F0D2F61CC1C42069E86540
-```
----
-I Googled various numeric strings to see if anyone else had publicly solved this card, but only &quot;3ECC8A9D 586E011D 7F030A4C&quot; returned any hits.
-
-This query returned 22 hits all from http://ideone.com/ Most of the results are from 1 year ago, with two being from 2 years ago. 
-
-* http://ideone.com/dECXXA
-* http://ideone.com/RboH37
-
-It's quite possible that ideone is a online tool favored by Raytheon employees. This might also indicated that &quot;card 2&quot; is actually older run than &quot;card 1&quot;.
-
----
-The binary on the front easily converts to ascii and is one ''contact.''
-
----
-The big blob of hex on the back easily converts to ascii and is not a contact.
-
----
-The first small blob of hex on the back easily converts to ascii and is a //interesting// ''contact''
-
----
-The second small blob of hex on the back easily converts to ascii and is not a contact
-
----
-The phone number contact is a Google Voice number. Couldn't find any advertisement of the number on the web.
-
----
-&quot;Searching&quot; the //interesting// contact, and you can find out about a USB puzzle  that has all kinds of fun in the firmware and media.
-
----
-Curious to why the UV ink was referred to as 365nm and 460nm, I came across this [[video|https://www.youtube.com/watch?v=vl3y72VFrsU]]. Based on this, I'm guessing that the led device given along with the card is actually 385nm.
-
-This [[link|http://www.riskreactor.com/blacklight-and-uv-leds/]] gives more insight into UV activated dyes. The dye used on this card is green.
-
----
-Solved the UV challenge of Card 1 by brute-forcing the key (very small keyspace). The answer returned is an email with a good domain name (not named here to prevent spoilers), but the username is &quot;lcgpuzyle&quot;.
-
-As the username looked odd (high entropy), I tested the address by sending an email which was bounced back, thus confirming my suspicion.
-
-I then googled the email domain in search for 9 letter usernames that might be the plaintext or unjumble of this email and found
-
-* personnel (less entropy)
-* swilliams (less entropy)
-
-possibly more information can be learned from the other UV challenge, or the green text.
-
----
-UV challenge of Card 2 appears to be a simple xor cipher block chaining with an unknown initialization vector.
-
-```
-c1 = (iv^p1)
-c2 = (iv^p1)^p2
-c3 = (iv^p1^p2)^p3
-```
-
-Since there isn't additional crypto involved, I should be able to rewind the chaining and get some plain text by xoring c2 with either c1 (to get p2) or c3 (to get p3), and then work on decoupling p1 and the initialization vector.
-
-However, I'm not seeing recognizable plaintext after performing such calculations. Perhaps there's something I'm overlooking.</pre>
+! 802.16 (~WiMAX)</pre>
 </div>
 <div created="20150529125941855" modified="20150529231623499" tags="projects" title="Recon-NG Modules">
 <pre>''repository'': https://github.com/maetrics/recon-scripts
@@ -8658,9 +8530,6 @@ If you really are looking for blogs, I contribute to the following:
 * http://www.crimsonagents.com/
 * http://www.iseedeadpackets.net/</pre>
 </div>
-<div created="20150528225331579" modified="20150528230214367" tags="study" title="Wifi-Direct">
-<pre>''Goal:'' Detect, parse traffic, and communicate</pre>
-</div>
 <div created="20150529042028667" modified="20150709041211880" tags="projects" title="Wireshark Modules">
 <pre>''repository:'' https://github.com/maetrics/wireshark-scripts
 
@@ -8803,18 +8672,6 @@ http://labs.detectify.com/post/109874856166/do-you-dare-to-show-your-php-easter-
 http://httpd.apache.org/docs/1.3/howto/ssi.html
 
 https://www.owasp.org/index.php/Server-Side_Includes_(SSI)_Injection</pre>
-</div>
-<div created="20150528231101365" modified="20150528231129171" tags="study" title="Zigbee">
-<pre>''Goal:'' Detect signal, demodulate, parse traffic, and communicate
-
-[[Ember Zigbee Tutorial |https://www.youtube.com/playlist?list=PL24BC4F9A51A9B5B5]]
-
-!!Lab
-* $45 [[dongle|http://www.atmel.com/tools/rzusbstick.aspx#buy]]
-* $55 [[GE - In-Wall Smart Switch|http://www.bestbuy.com/site/ge-in-wall-smart-switch-white/2065113.p?id=1219522639958&amp;skuId=2065113]]
-* $165 [[Kwikset 912 Smartcode Electronic Deadbolt|http://www.amazon.com/Kwikset-SmartCode%C2%AE-Electronic-featuring-SmartKey%C2%AE/dp/B004ECHIYG]]
-* $200 [[Kwikset Kevo Deadbolt|http://www.kwikset.com/kevo/default.aspx#.VVt4D_lVhBc]] deadbolt bluetooth to unlock, but zigbee reports wheither you’re home or not
- </pre>
 </div>
 
 </div>
